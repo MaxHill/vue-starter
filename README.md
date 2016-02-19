@@ -6,4 +6,4 @@ $ cd investment
 $ npm install
 
 ###Run
-$ grunt
+$ gulp

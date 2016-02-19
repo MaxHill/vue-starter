@@ -1,11 +1,13 @@
 /**
  * Example plugin that tells it like it is.
+ *
  * @param  {instance} Vue
  * @param  {object} options
  */
+
 function example(Vue, options) {
     Vue.prototype.$pluginSay = function() {
-       alert('I\'m a plugin');
+        console.log('I\'m a plugin');
     };
 }
 
