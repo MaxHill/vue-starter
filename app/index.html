@@ -9,13 +9,7 @@
 <body>
     <div id="app">
 
-        <div v-if="!authenticated">
-            <authenticate :authenticated.sync="authenticated"></authenticate>
-        </div>
-
-        <div v-if="authenticated">
-            <todos :authenticated.sync="authenticated"></todos>
-        </div>
+        <welcome></welcome>
 
     </div>
 
