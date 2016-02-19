@@ -106,7 +106,7 @@ module.exports = {
 };
 
 },{"./nav.template.html":5}],5:[function(require,module,exports){
-module.exports = "<nav>\n    <a href=\"/\">Home</a>\n    <a href=\"/about\">About</a>\n</nav>\n";
+module.exports = "<nav class=\"navbar navbar-inverse navbar-fixed-top\">\n    <div class=\"container\">\n        <div class=\"navbar-header\">\n            <button type=\"button\" class=\"navbar-toggle\" data-toggle=\"collapse\" data-target=\".navbar-collapse\">\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            <span class=\"icon-bar\"></span>\n            </button>\n            <a class=\"navbar-brand\" href=\"#\">FOREVERLIVING AWESOME!</a>\n        </div>\n\n        <div class=\"collapse navbar-collapse\">\n\n            <ul class=\"nav navbar-nav navbar-right\">\n                <li><a href=\"/\">Home</a></li>\n                <li><a href=\"/about\">About</a></li>\n            </ul>\n        </div><!--/.nav-collapse -->\n    </div>\n</nav>\n";
 
 },{}],6:[function(require,module,exports){
 'use strict';
