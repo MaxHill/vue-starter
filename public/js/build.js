@@ -61,7 +61,7 @@ module.exports = "<div>\n    <h3>Hello from vue</h3>\n</div>\n";
 module.exports = {
     methods: {
         scream: function scream() {
-            alert('AAAAAAAAAAAAAAA');
+            alert('AAAAAAAAAAAA!!!!!!');
         }
     }
 };

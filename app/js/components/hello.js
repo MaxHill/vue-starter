@@ -8,7 +8,7 @@ module.exports = {
     // Simple mixin thats add function that screams at the user
     mixins: [require('../mixins/scream')],
 
-    data() {
+    data        () {
         return {};
     },
 

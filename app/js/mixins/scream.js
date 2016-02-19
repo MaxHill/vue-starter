@@ -5,7 +5,7 @@
 module.exports = {
     methods: {
         scream() {
-            alert('AAAAAAAAAAAAAAA');
+            alert('AAAAAAAAAAAA!!!!!!');
         }
     }
 };
