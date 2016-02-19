@@ -1,3 +1,7 @@
-#Npm install, run build and get cracking!
-```$ npm install```
-```$ gulp```
+#Investment
+$ git clone https://github.com/MaxHill/investment.git
+$ cd investment
+$ npm install
+
+###Run
+$ grunt
