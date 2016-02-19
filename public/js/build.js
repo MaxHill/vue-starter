@@ -15,20 +15,36 @@ Vue.use(VueResource);
 /**
  * Vue root instance
  */
-new Vue({
-    el: '#app',
-    data: {},
+var App = Vue.extend({
+    data: function data() {
+        return {};
+    },
     ready: function ready() {
         //From example plugin
         this.$pluginSay();
     },
 
     components: {
-        welcome: require('./views/welcome')
+        navigation: require('./components/nav')
     }
 });
 
-},{"./plugins/example":5,"./views/welcome":6,"vue":34,"vue-resource":22,"vue-router":33}],2:[function(require,module,exports){
+var Router = new VueRouter({
+    history: true
+});
+
+Router.map({
+    '/': {
+        component: require('./views/welcome')
+    },
+    '/about': {
+        component: require('./views/about')
+    }
+});
+
+Router.start(App, '#app');
+
+},{"./components/nav":4,"./plugins/example":7,"./views/about":8,"./views/welcome":10,"vue":38,"vue-resource":26,"vue-router":37}],2:[function(require,module,exports){
 'use strict';
 
 /**
@@ -71,10 +87,28 @@ module.exports = {
     }
 };
 
-},{"../mixins/scream":4,"./hello.template.html":3}],3:[function(require,module,exports){
+},{"../mixins/scream":6,"./hello.template.html":3}],3:[function(require,module,exports){
 module.exports = "<div>\n    <h3>Hello from vue; eller {{name}}</h3>\n</div>\n";
 
 },{}],4:[function(require,module,exports){
+'use strict';
+
+/**
+ * Outputs navigaion to the page.
+ * @type {Object}
+ */
+module.exports = {
+    template: require('./nav.template.html'),
+
+    data: function data() {
+        return {};
+    }
+};
+
+},{"./nav.template.html":5}],5:[function(require,module,exports){
+module.exports = "<nav>\n    <a href=\"/\">Home</a>\n    <a href=\"/about\">About</a>\n</nav>\n";
+
+},{}],6:[function(require,module,exports){
 'use strict';
 
 /**
@@ -89,7 +123,7 @@ module.exports = {
     }
 };
 
-},{}],5:[function(require,module,exports){
+},{}],7:[function(require,module,exports){
 'use strict';
 
 /**
@@ -107,7 +141,21 @@ function example(Vue, options) {
 
 module.exports = example;
 
-},{}],6:[function(require,module,exports){
+},{}],8:[function(require,module,exports){
+'use strict';
+
+/**
+ * The welcome view greeting the user.
+ * @type {Object}
+ */
+module.exports = {
+  template: require('./about.template.html')
+};
+
+},{"./about.template.html":9}],9:[function(require,module,exports){
+module.exports = "<h3>Hello</h3>\n<p>Is it me you are looking for ?</p>\n";
+
+},{}],10:[function(require,module,exports){
 'use strict';
 
 /**
@@ -121,10 +169,10 @@ module.exports = {
     }
 };
 
-},{"../components/hello":2,"./welcome.template.html":7}],7:[function(require,module,exports){
-module.exports = "<div>\n    <hello></hello>\n    <p>Hej carina</p>\n</div>\n";
+},{"../components/hello":2,"./welcome.template.html":11}],11:[function(require,module,exports){
+module.exports = "<div>\n    <hello></hello>\n    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Animi assumenda dolore distinctio officiis eius consequuntur aperiam neque ex voluptates odio repellat deserunt eos consequatur at amet tempora sequi, non sapiente.</p>\n</div>\n";
 
-},{}],8:[function(require,module,exports){
+},{}],12:[function(require,module,exports){
 // shim for using process in browser
 
 var process = module.exports = {};
@@ -217,7 +265,7 @@ process.chdir = function (dir) {
 };
 process.umask = function() { return 0; };
 
-},{}],9:[function(require,module,exports){
+},{}],13:[function(require,module,exports){
 /**
  * Before Interceptor.
  */
@@ -237,7 +285,7 @@ module.exports = {
 
 };
 
-},{"../util":32}],10:[function(require,module,exports){
+},{"../util":36}],14:[function(require,module,exports){
 /**
  * Base client.
  */
@@ -304,7 +352,7 @@ function parseHeaders(str) {
     return headers;
 }
 
-},{"../../promise":25,"../../util":32,"./xhr":13}],11:[function(require,module,exports){
+},{"../../promise":29,"../../util":36,"./xhr":17}],15:[function(require,module,exports){
 /**
  * JSONP client.
  */
@@ -354,7 +402,7 @@ module.exports = function (request) {
     });
 };
 
-},{"../../promise":25,"../../util":32}],12:[function(require,module,exports){
+},{"../../promise":29,"../../util":36}],16:[function(require,module,exports){
 /**
  * XDomain client (Internet Explorer).
  */
@@ -393,7 +441,7 @@ module.exports = function (request) {
     });
 };
 
-},{"../../promise":25,"../../util":32}],13:[function(require,module,exports){
+},{"../../promise":29,"../../util":36}],17:[function(require,module,exports){
 /**
  * XMLHttp client.
  */
@@ -445,7 +493,7 @@ module.exports = function (request) {
     });
 };
 
-},{"../../promise":25,"../../util":32}],14:[function(require,module,exports){
+},{"../../promise":29,"../../util":36}],18:[function(require,module,exports){
 /**
  * CORS Interceptor.
  */
@@ -484,7 +532,7 @@ function crossOrigin(request) {
     return (requestUrl.protocol !== originUrl.protocol || requestUrl.host !== originUrl.host);
 }
 
-},{"../util":32,"./client/xdr":12}],15:[function(require,module,exports){
+},{"../util":36,"./client/xdr":16}],19:[function(require,module,exports){
 /**
  * Header Interceptor.
  */
@@ -512,7 +560,7 @@ module.exports = {
 
 };
 
-},{"../util":32}],16:[function(require,module,exports){
+},{"../util":36}],20:[function(require,module,exports){
 /**
  * Service for sending network requests.
  */
@@ -612,7 +660,7 @@ Http.headers = {
 
 module.exports = _.http = Http;
 
-},{"../promise":25,"../util":32,"./before":9,"./client":10,"./cors":14,"./header":15,"./interceptor":17,"./jsonp":18,"./method":19,"./mime":20,"./timeout":21}],17:[function(require,module,exports){
+},{"../promise":29,"../util":36,"./before":13,"./client":14,"./cors":18,"./header":19,"./interceptor":21,"./jsonp":22,"./method":23,"./mime":24,"./timeout":25}],21:[function(require,module,exports){
 /**
  * Interceptor factory.
  */
@@ -659,7 +707,7 @@ function when(value, fulfilled, rejected) {
     return promise.then(fulfilled, rejected);
 }
 
-},{"../promise":25,"../util":32}],18:[function(require,module,exports){
+},{"../promise":29,"../util":36}],22:[function(require,module,exports){
 /**
  * JSONP Interceptor.
  */
@@ -679,7 +727,7 @@ module.exports = {
 
 };
 
-},{"./client/jsonp":11}],19:[function(require,module,exports){
+},{"./client/jsonp":15}],23:[function(require,module,exports){
 /**
  * HTTP method override Interceptor.
  */
@@ -698,7 +746,7 @@ module.exports = {
 
 };
 
-},{}],20:[function(require,module,exports){
+},{}],24:[function(require,module,exports){
 /**
  * Mime Interceptor.
  */
@@ -736,7 +784,7 @@ module.exports = {
 
 };
 
-},{"../util":32}],21:[function(require,module,exports){
+},{"../util":36}],25:[function(require,module,exports){
 /**
  * Timeout Interceptor.
  */
@@ -768,7 +816,7 @@ module.exports = function () {
     };
 };
 
-},{}],22:[function(require,module,exports){
+},{}],26:[function(require,module,exports){
 /**
  * Install plugin.
  */
@@ -823,7 +871,7 @@ if (window.Vue) {
 
 module.exports = install;
 
-},{"./http":16,"./promise":25,"./resource":26,"./url":27,"./util":32}],23:[function(require,module,exports){
+},{"./http":20,"./promise":29,"./resource":30,"./url":31,"./util":36}],27:[function(require,module,exports){
 /**
  * Promises/A+ polyfill v1.1.4 (https://github.com/bramstein/promis)
  */
@@ -1004,7 +1052,7 @@ p.catch = function (onRejected) {
 
 module.exports = Promise;
 
-},{"../util":32}],24:[function(require,module,exports){
+},{"../util":36}],28:[function(require,module,exports){
 /**
  * URL Template v2.0.6 (https://github.com/bramstein/url-template)
  */
@@ -1156,7 +1204,7 @@ exports.encodeReserved = function (str) {
     }).join('');
 };
 
-},{}],25:[function(require,module,exports){
+},{}],29:[function(require,module,exports){
 /**
  * Promise adapter.
  */
@@ -1267,7 +1315,7 @@ p.always = function (callback) {
 
 module.exports = Promise;
 
-},{"./lib/promise":23,"./util":32}],26:[function(require,module,exports){
+},{"./lib/promise":27,"./util":36}],30:[function(require,module,exports){
 /**
  * Service for interacting with RESTful services.
  */
@@ -1379,7 +1427,7 @@ Resource.actions = {
 
 module.exports = _.resource = Resource;
 
-},{"./util":32}],27:[function(require,module,exports){
+},{"./util":36}],31:[function(require,module,exports){
 /**
  * Service for URL templating.
  */
@@ -1511,7 +1559,7 @@ function serialize(params, obj, scope) {
 
 module.exports = _.url = Url;
 
-},{"../util":32,"./legacy":28,"./query":29,"./root":30,"./template":31}],28:[function(require,module,exports){
+},{"../util":36,"./legacy":32,"./query":33,"./root":34,"./template":35}],32:[function(require,module,exports){
 /**
  * Legacy Transform.
  */
@@ -1559,7 +1607,7 @@ function encodeUriQuery(value, spaces) {
         replace(/%20/g, (spaces ? '%20' : '+'));
 }
 
-},{"../util":32}],29:[function(require,module,exports){
+},{"../util":36}],33:[function(require,module,exports){
 /**
  * Query Parameter Transform.
  */
@@ -1585,7 +1633,7 @@ module.exports = function (options, next) {
     return url;
 };
 
-},{"../util":32}],30:[function(require,module,exports){
+},{"../util":36}],34:[function(require,module,exports){
 /**
  * Root Prefix Transform.
  */
@@ -1603,7 +1651,7 @@ module.exports = function (options, next) {
     return url;
 };
 
-},{"../util":32}],31:[function(require,module,exports){
+},{"../util":36}],35:[function(require,module,exports){
 /**
  * URL Template (RFC 6570) Transform.
  */
@@ -1621,7 +1669,7 @@ module.exports = function (options) {
     return url;
 };
 
-},{"../lib/url-template":24}],32:[function(require,module,exports){
+},{"../lib/url-template":28}],36:[function(require,module,exports){
 /**
  * Utility functions.
  */
@@ -1745,7 +1793,7 @@ function merge(target, source, deep) {
     }
 }
 
-},{}],33:[function(require,module,exports){
+},{}],37:[function(require,module,exports){
 /*!
  * vue-router v0.7.11
  * (c) 2016 Evan You
@@ -4395,7 +4443,7 @@ function merge(target, source, deep) {
   return Router;
 
 }));
-},{}],34:[function(require,module,exports){
+},{}],38:[function(require,module,exports){
 (function (process,global){
 /*!
  * Vue.js v1.0.16
@@ -13991,7 +14039,7 @@ if (devtools) {
 module.exports = Vue;
 }).call(this,require('_process'),typeof global !== "undefined" ? global : typeof self !== "undefined" ? self : typeof window !== "undefined" ? window : {})
 
-},{"_process":8}]},{},[1])
+},{"_process":12}]},{},[1])
 
 
 //# sourceMappingURL=build.js.map

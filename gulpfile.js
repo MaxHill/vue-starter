@@ -103,6 +103,7 @@ gulp.task('html', function() {
 gulp.task('webserver', function() {
     gulp.src('public')
     .pipe(webserver({
+        fallback: 'index.html',
         livereload: true,
         directoryListing: false,
         open: true

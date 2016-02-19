@@ -12,14 +12,31 @@ Vue.use(VueResource);
 /**
  * Vue root instance
  */
-new Vue({
-    el: '#app',
-    data: {},
+var App = Vue.extend({
+    data() {
+        return {};
+    },
     ready() {
         //From example plugin
         this.$pluginSay();
     },
     components: {
-        welcome: require('./views/welcome'),
-    },
+        navigation: require('./components/nav')
+    }
 });
+
+var Router = new VueRouter({
+    history: true
+});
+
+Router.map({
+    '/': {
+        component: require('./views/welcome')
+    },
+    '/about': {
+        component: require('./views/about')
+    }
+});
+
+Router.start(App, '#app');
+
