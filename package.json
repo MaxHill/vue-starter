@@ -1,5 +1,5 @@
 {
-  "name": "Investment time",
+  "name": "investment_time",
   "version": "1.0.0",
   "description": "Exploring vue on investment time",
   "repository": {
@@ -41,9 +41,7 @@
   "scripts": {
     "test": "karma start --single-run"
   },
-  "keywords": [
-    "Investment"
-  ],
+  "keywords": [],
   "author": "Max Hill",
   "license": "ISC"
 }
