@@ -1,13 +1,16 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 'use strict';
 
+// Require what we need.
 var Vue = require('vue');
 var Example = require('./plugins/example');
 
-var scream = require('./mixins/scream');
-
+// Use the example plugin
 Vue.use(Example);
 
+/**
+ * Vue root instance
+ */
 new Vue({
     el: '#app',
     data: {},
@@ -21,19 +24,26 @@ new Vue({
     }
 });
 
-},{"./mixins/scream":4,"./plugins/example":5,"./views/welcome":6,"vue":9}],2:[function(require,module,exports){
+},{"./plugins/example":5,"./views/welcome":6,"vue":9}],2:[function(require,module,exports){
 'use strict';
 
-var Scream = require('../mixins/scream');
+/**
+ * Outputs "Hello" to the page.
+ * @type {Object}
+ */
 module.exports = {
     template: require('./hello.template.html'),
-    mixins: [Scream],
+
+    // Simple mixin thats add function that screams at the user
+    mixins: [require('../mixins/scream')],
+
     data: function data() {
         return {};
     },
     ready: function ready() {
         this.scream();
     },
+
 
     methods: {}
 };
@@ -44,6 +54,10 @@ module.exports = "<div>\n    <h3>Hello from vue</h3>\n</div>\n";
 },{}],4:[function(require,module,exports){
 'use strict';
 
+/**
+ * Simple mixin thats add function that screams at the user
+ * @type {Object}
+ */
 module.exports = {
     methods: {
         scream: function scream() {
@@ -56,9 +70,10 @@ module.exports = {
 'use strict';
 
 /**
- * Install plugin.
+ * Example plugin that tells it like it is.
+ * @param  {instance} Vue
+ * @param  {object} options
  */
-
 function example(Vue, options) {
   Vue.prototype.$pluginSay = function () {
     alert('I\'m a plugin');
@@ -70,6 +85,10 @@ module.exports = example;
 },{}],6:[function(require,module,exports){
 'use strict';
 
+/**
+ * The welcome view greeting the user.
+ * @type {Object}
+ */
 module.exports = {
     template: require('./welcome.template.html'),
     components: {

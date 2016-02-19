@@ -9,7 +9,7 @@
   "main": "gulpfile.js",
   "dependencies": {
     "lost": "^6.6.2",
-    "vue": "^1.0.13",
+    "vue": "^1.0.13"
   },
   "devDependencies": {
     "autoprefixer": "^6.2.3",

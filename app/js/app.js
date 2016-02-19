@@ -1,10 +1,13 @@
+// Require what we need.
 var Vue = require('vue');
 var Example = require('./plugins/example');
 
-var scream = require('./mixins/scream');
-
+// Use the example plugin
 Vue.use(Example);
 
+/**
+ * Vue root instance
+ */
 new Vue({
     el: '#app',
     data: {},
