@@ -23,18 +23,24 @@ alias g:c="npm run-script generate:component"
 alias g:m="npm run-script generate:mixin"
 ```
 ###Page
-`$ g:p --name="about"` / `$ npm run-script generate:page --name="about"`
+`$ g:p --name="about"` or
+
+`$ npm run-script generate:page --name="about"`
 
 This wil create both a template file and a page component file.
-Dont forget to add the page component file to rhe router in `app/js/app.js`
+Dont forget to add the page component file to the router in `app/js/app.js`
 
 ###Component
-`$ g:c --name="navigation"` / `$ npm run-script generate:component --name="navigation"`
+`$ g:c --name="navigation"` or
+
+`$ npm run-script generate:component --name="navigation"`
 
 This wil create both a template file and a component file.
 
 ###Mixing
-`$ g:m --name="canAuthenticate"` / `$ npm run-script generate:mixin --name="canAuthenticate"`
+`$ g:m --name="canAuthenticate"` or
+
+`$ npm run-script generate:mixin --name="canAuthenticate"`
 
 This will create a mixin file.
 
