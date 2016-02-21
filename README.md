@@ -14,8 +14,9 @@ $ npm install
 `$ npm test` #Runs the unit tests once (this is done automatically when running gulp)
 
 ##Generators
-It's recomended to create aliases to be able to quickly run these generators.
-Ex.
+**Tip:** Create aliases to be able to quickly run these generators.
+
+Ex:
 ```
 #Mdb - generators
 alias g:p="npm run-script generate:page"
