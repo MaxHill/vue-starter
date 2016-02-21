@@ -9,63 +9,28 @@ $ cd investment
 $ npm install
 
 ##Actions
-$ gulp #Runs the dev environment of the application
+`$ gulp #Runs the dev environment of the application
 
-$ npm test #Runs the unit tests once (this is done automatically when running gulp)
+`$ npm test` #Runs the unit tests once (this is done automatically when running gulp)
 
-##Develop
-###Create a new page
-You will need 2 new files in the directory:
-`app/js/views/`
-
-**First, create a javascript file with the name of the page. ex.**
-
-`about.js`
-
-**Next, create a new template file (html) which looks as follows.**
-
-`about.template.html`
-
-Example terminal workflow:
+##Generators
+It's recomended to create a alias too be able to quicker run these generators.
+ex.
 ```
-$ cd project
-$ touch app/js/views/about.js && touch app/js/views/about.template.html
+#Mdb - generators
+alias g="npm run-script generate"
+alias g:p="npm run-script generate:page --name="
+alias g:c="npm run-script generate:component --name="
+alias g:m="npm run-script generate:mixin --name="
 ```
-
-You will now have:
-`app/js/views/about.js` & 
-`app/js/views/about.template.html`
-
-**The next step is to add the code to these files to make them components:**
-
-about.js:
-```
-/**
- * The about view.
- * @type {Object}
- */
-module.exports = {
-    template: require('./about.template.html'),
-    components: {
-        // Require components here
-    },
-};
-```
-about.template.js
-```
-<div>
-  <h1>About Me</h1>
-</div>
-```
-**The final step is to add the component to the router (`app/js/app.js`):**
-
-```
-Router.map({
-    '/about': {
-        component: require('./views/about')
-    }
-});
-```
-
+###Page
+`$ npm run-script generate:page --name="about"`
+This wil create both a template file and a page component file.
+###Component
+`$ npm run-script generate:component --name="navigation"`
+This wil create both a template file and a component file.
+###Mixing
+`$ npm run-script generate:mixin --name="canAuthenticate"`
+This will create a mixin file.
 
 
