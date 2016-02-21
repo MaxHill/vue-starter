@@ -9,7 +9,7 @@ $ cd investment
 $ npm install
 
 ##Actions
-`$ gulp #Runs the dev environment of the application
+`$ gulp` #Runs the dev environment of the application
 
 `$ npm test` #Runs the unit tests once (this is done automatically when running gulp)
 
