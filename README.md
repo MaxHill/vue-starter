@@ -44,4 +44,41 @@ This wil create both a template file and a component file.
 
 This will create a mixin file.
 
+## What goes where?
+
+* app
+  * [js](#js)
+    * [components](#components)
+    * [mixins](#mixins)
+    * [views](#views)
+    * [app.js](#appjs)
+* [commands](#commands)
+* [public](#public)
+* [test](#test)
+
+#### Js 
+This is where you write all your js code.
+
+#### Components
+Components are reusable parts of pages, like navigation,footer or maby a button.
+You may use components in pages as well as in other components.
+
+#### Mixins
+Some components will share some functionality. If thats the case extracting a mixin might be helpfull.
+Think of this lika a php trait if you want.
+
+#### Views
+These are the different views or "pages" of your application. It can for example be the /about page.
+
+#### App.js
+This is your main javascript file where everything is bootstrapped. Here you instanciate plugins, set application wide preferences and specify your routes. Think of this as your index.php if you want. 
+
+#### Commands
+You probably don't need to worry about this folder. This is where your commandline commands live. For example the generators.
+
+#### Public
+This is the application that is build by the gulp file. This is all the browser knows about.
+
+#### Test
+This is your most sacred place in your application. Here you find all your tests. Because you do write tests, right?
 
