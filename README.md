@@ -81,5 +81,5 @@ You probably don't need to worry about this folder. This is where your commandli
 This is the application that is build by the gulp file. This is all the browser knows about.
 
 #### Test
-This is your most sacred place in your application. Here you find all your tests. Because you do write tests, right?
+This is the most sacred place in your application. Here you find all your tests. Because you do write tests, right?
 
