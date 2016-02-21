@@ -1,8 +1,14 @@
 var File = require('./support/File');
+var clc = require('cli-color');
 var dir = '../app/js/components/';
 // jscs:disable
 var name = process.env.npm_config_name;
 // jscs:enable
+
+if ((!name || 0 === name.length)) {
+    console.log(clc.red('You must specify a name'));
+    return;
+}
 
 var component = dir + name + '.js';
 var template = dir + name + '.template.html';
