@@ -17,10 +17,10 @@ module.exports = {
 
     methods: {
         changeName() {
+            this.index ++;
             let names = ['Max', 'Carina', 'Edward'];
             this.name = names[this.index];
 
-            this.index ++;
             if (this.index == 3) {
                 this.index = 0;
             }

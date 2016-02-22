@@ -1,5 +1,13 @@
 #Investment
-##A vue startup project.
+A view base setup.
+
+## Table of contents
+
+* [Installation](#installation)
+* [Actions](#actions)
+* [Generators](#generators)
+* Testing
+* [What goes where?](#what-goes-where)
 
 ##Installation:
 $ git clone https://github.com/MaxHill/investment.git
@@ -22,6 +30,7 @@ Ex:
 alias g:p="npm run-script generate:page"
 alias g:c="npm run-script generate:component"
 alias g:m="npm run-script generate:mixin"
+alias g:t="npm run-script generate:test"
 ```
 ###Page
 `$ g:p --name="about"` or
@@ -45,6 +54,17 @@ This wil create both a template file and a component file.
 
 This will create a mixin file.
 
+###Mixing
+`$ g:t --component="navigation"` or
+
+`$ npm run-script generate:test --component="navigation"` or
+
+`$ g:t --name="navigation"` or
+
+`$ npm run-script generate:test --name="navigation"`
+
+This will create a test stub. With the option component the test-stub will bootstrap that component. With the name option it will not.
+
 ## What goes where?
 
 * app
@@ -57,7 +77,7 @@ This will create a mixin file.
 * [public](#public)
 * [test](#test)
 
-#### Js 
+#### Js
 This is where you write all your js code.
 
 #### Components
@@ -72,7 +92,7 @@ Think of this lika a php trait if you want.
 These are the different views or "pages" of your application. It can for example be the /about page.
 
 #### App.js
-This is your main javascript file where everything is bootstrapped. Here you instanciate plugins, set application wide preferences and specify your routes. Think of this as your index.php if you want. 
+This is your main javascript file where everything is bootstrapped. Here you instanciate plugins, set application wide preferences and specify your routes. Think of this as your index.php if you want.
 
 #### Commands
 You probably don't need to worry about this folder. This is where your commandline commands live. For example the generators.
