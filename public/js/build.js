@@ -67,10 +67,10 @@ module.exports = {
 
     methods: {
         changeName: function changeName() {
+            this.index++;
             var names = ['Max', 'Carina', 'Edward'];
             this.name = names[this.index];
 
-            this.index++;
             if (this.index == 3) {
                 this.index = 0;
             }
@@ -14041,5 +14041,3 @@ module.exports = Vue;
 
 },{"_process":12}]},{},[1])
 
-
-//# sourceMappingURL=build.js.map

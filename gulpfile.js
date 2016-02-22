@@ -14,7 +14,11 @@ var gulp = require('gulp'),
     stringify = require('stringify'),
     jscs = require('gulp-jscs'),
     webserver = require('gulp-webserver'),
-    test = require('karma').Server;
+    test = require('karma').Server,
+    uglify = require('gulp-uglify'),
+    gzip = require('gulp-gzip'),
+    rename = require("gulp-rename"),
+    minifyCss = require('gulp-minify-css');
 
 function compile(watch) {
     var bundler = watchify(browserify('app/js/app.js', {debug: true}).transform(babel, {presets: ['es2015']}).transform(stringify(['.html'])));
@@ -34,8 +38,17 @@ function compile(watch) {
             .pipe(source('build.js'))
             .pipe(buffer())
             .pipe(sourcemaps.init({loadMaps: true}))
-            .pipe(sourcemaps.write('./'))
             .pipe(gulp.dest('./public/js'))
+            .pipe(uglify({
+                compress: {
+                    negate_iife: false
+                }
+            }))
+            .pipe(rename({suffix: '.min'}))
+            .pipe(gulp.dest('./public/js'))
+            .pipe(gzip({ preExtension: 'gz' }))
+            .pipe(gulp.dest('./public/js'))
+            .pipe(sourcemaps.write('./'))
             .pipe(notify({
                 title: 'Scripts compiled',
                 message: 'Scripts compiled successfully',
@@ -77,8 +90,13 @@ gulp.task('styles', function() {
       lost(),
       autoprefixer()
     ]))
-    .pipe(sourcemaps.write('./'))
     .pipe(gulp.dest('./public/css'))
+    .pipe(rename({suffix: '.min'}))
+    .pipe(minifyCss({compatibility: 'ie8'}))
+    .pipe(gulp.dest('./public/css'))
+    .pipe(gzip({ preExtension: 'gz' }))
+    .pipe(gulp.dest('./public/css'))
+    .pipe(sourcemaps.write('./'))
     .pipe(notify({
             title: 'Styles',
             message: 'Styles task complete',
