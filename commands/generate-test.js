@@ -4,8 +4,10 @@ var dir = '../test/';
 // jscs:disable
 var name = process.env.npm_config_component;
 var fileName = process.env.npm_config_component;
+var component = true;
 if (!name) {
     name = process.env.npm_config_name;
+    component = false;
 }
 // jscs:enable
 
@@ -36,5 +38,10 @@ describe('${capitalize(name)}', () => {
 `;
 
 
+if (component) {
+    return File.exists(`${__dirname}../app/js/components/${fileName}.js`,function(){
+        console.log(clc.red(`The component [${fileName}] does not exist!`));
+    }, '');
+}
 
-File.create(test, testContent);
+//File.create(test, testContent);

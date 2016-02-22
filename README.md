@@ -54,7 +54,7 @@ This wil create both a template file and a component file.
 
 This will create a mixin file.
 
-###Mixing
+###Tests
 `$ g:t --component="navigation"` or
 
 `$ npm run-script generate:test --component="navigation"` or
