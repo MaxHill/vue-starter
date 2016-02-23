@@ -46,6 +46,7 @@
     "watchify": "^3.6.1"
   },
   "scripts": {
+    "start": "gulp",
     "test": "karma start --single-run",
     "generate:page": "node  ./commands/generate-page.js",
     "generate:component": "node  ./commands/generate-component.js",

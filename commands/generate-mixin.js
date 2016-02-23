@@ -1,26 +1,15 @@
-var File = require('./support/File');
-var clc = require('cli-color');
-var dir = '../app/js/mixins/';
-// jscs:disable
-var name = process.env.npm_config_name;
-// jscs:enable
+var Generate = require('./support/Generate');
 
-if ((!name || 0 === name.length)) {
-    console.log(clc.red('You must specify a name'));
-    return;
-}
-
-var mixin = dir + name + '.js';
-
-var mixinContent = `/**
- * Simple mixin thats add function that screams at the user
+// Create Template
+var mixin = new Generate('app/js/mixins');
+mixin.setContent(`/**
+ * ${ mixin.name } mixin.
  * @type {Object}
  */
 module.exports = {
     methods: {
         // methods
     }
-};`;
-
-File.create(mixin, mixinContent);
+};`);
+mixin.create();
 

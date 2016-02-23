@@ -4,6 +4,7 @@ module.exports =  {
     create: function(file, content) {
         this.exists(__dirname + '/../' + file, this.write, content);
     },
+
     exists: function(file, callback, content) {
         fs.exists(file, function(exists) {
             if (exists) {
@@ -16,6 +17,7 @@ module.exports =  {
             callback(file, content);
         });
     },
+
     write: function(file, content) {
         fs.writeFile(file, content, function(err) {
             if (err) {

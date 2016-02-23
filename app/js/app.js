@@ -17,7 +17,7 @@ var App = Vue.extend({
         return {};
     },
     ready() {
-        //From example plugin
+        // From example plugin
         this.$pluginSay();
     },
     components: {
@@ -29,14 +29,6 @@ var Router = new VueRouter({
     history: true
 });
 
-Router.map({
-    '/': {
-        component: require('./views/welcome')
-    },
-    '/about': {
-        component: require('./views/about')
-    }
-});
-
+Router.map(require('./router.js'));
 Router.start(App, '#app');
 

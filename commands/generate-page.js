@@ -1,31 +1,20 @@
-var File = require('./support/File');
-var clc = require('cli-color');
-var dir = '../app/js/views/';
-// jscs:disable
-var name = process.env.npm_config_name;
-// jscs:enable
+var Generate = require('./support/Generate');
 
-if ((!name || 0 === name.length)) {
-    console.log(clc.red('You must specify a name'));
-    return;
-}
-
-var component = dir + name + '.js';
-var template = dir + name + '.template.html';
-
-var componentContent = `/**
- * The ${name} view.
+// Create Template
+var page = new Generate('app/js/views');
+page.setContent(`/**
+ * The ${ page.name } view.
  * @type {Object}
  */
 module.exports = {
-    template: require('./${ name }.template.html'),
+    template: require('./${ page.name }.template.html'),
     components: {
         // components
     },
-};`;
+};`);
+page.create();
 
-var templateContent = `<p>${name} view</p>`;
-
-File.create(component, componentContent);
-File.create(template, templateContent);
-
+// Create Template
+var template = new Generate('app/js/views', 'template.html');
+template.setContent(`<p>${ template.name } view</p>`);
+template.create();
