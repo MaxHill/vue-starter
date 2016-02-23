@@ -118,10 +118,10 @@ gulp.task('html', function() {
     .pipe(gulp.dest('./public'));
 });
 
-    gulp.task('images', function() {
-        gulp.src('./app/images/**/*')
-        .pipe(gulp.dest('./public/images/'));
-    });
+gulp.task('images', function() {
+    gulp.src('./app/images/**/*')
+    .pipe(gulp.dest('./public/images/'));
+});
 
 gulp.task('webserver', function() {
     gulp.src('public')

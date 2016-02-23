@@ -16,5 +16,5 @@ page.create();
 
 // Create Template
 var template = new Generate('app/js/views', 'template.html');
-template.setContent(`<p>${ template.name } view</p>`);
+template.setContent(`<h2>${ template.capitalize(template.name) } view</h2>`);
 template.create();
