@@ -1,13 +1,9 @@
-// Require what we need.
 var Vue = require('vue');
-var Example = require('./plugins/example');
-var VueRouter = require('vue-router');
-var VueResource = require('vue-resource');
 
 // Use the example plugin
-Vue.use(Example);
-Vue.use(VueRouter);
-Vue.use(VueResource);
+Vue.use(require('./plugins/example'));
+Vue.use(require('vue-router'));
+Vue.use(require('vue-resource'));
 
 /**
  * Vue root instance
@@ -25,10 +21,7 @@ var App = Vue.extend({
     }
 });
 
-var Router = new VueRouter({
-    history: true
-});
-
+var Router = new VueRouter({history: true});
 Router.map(require('./router.js'));
 Router.start(App, '#app');
 
