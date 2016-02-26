@@ -158,11 +158,23 @@ function karmaTest() {
   }).start();
 };
 
+function karmaTestPreCommit() {
+    new test({
+        configFile: __dirname + '/karma.conf.js',
+        singleRun: true
+    }, function(code) {
+        if(code){
+            process.exit(-1);
+        }
+  }).start();
+};
+
 gulp.task('test', function() { return karmaTest(); });
+gulp.task('test-pre-commit', function() { return karmaTestPreCommit(); });
 
 gulp.task('default', ['images', 'styles', 'scripts', 'html', 'test', 'webserver', 'watch']);
 
-gulp.task('pre-commit', ['lintJs']);
+gulp.task('pre-commit', ['lintJs', 'test-pre-commit']);
 
 gulp.task('watch', function() {
     // Watch .js files

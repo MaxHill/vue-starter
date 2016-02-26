@@ -15,6 +15,7 @@ An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6**
 $ git clone https://github.com/MaxHill/investment.git
 $ cd investment
 $ npm install
+$ gulp
 ~~~
 
 ##Actions
