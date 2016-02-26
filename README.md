@@ -1,5 +1,5 @@
 #Investment time
-An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some browserify magic to tie it all together.
+An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together.
 
 ## Table of contents
 
