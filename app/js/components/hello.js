@@ -11,16 +11,16 @@ module.exports = {
     data() {
         return {
             name: 'Max',
-            index: 0
+            index: 1
         };
     },
 
     methods: {
         changeName() {
-            this.index ++;
             let names = ['Max', 'Carina', 'Edward'];
             this.name = names[this.index];
 
+            this.index ++;
             if (this.index == 3) {
                 this.index = 0;
             }
