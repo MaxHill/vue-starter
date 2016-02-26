@@ -1,6 +1,6 @@
 var Vue = require('vue');
 
-// Use the example plugin
+// Use the plugins
 Vue.use(require('./plugins/example'));
 Vue.use(require('vue-router'));
 Vue.use(require('vue-resource'));
