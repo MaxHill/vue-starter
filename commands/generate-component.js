@@ -18,7 +18,7 @@ module.exports = {
 component.create();
 
 // Create Template
-var template = new Generate('app/js/views', 'template.html');
+var template = new Generate('app/js/components', 'template.html');
 template.setContent(`<p>${ template.name } component</p>`);
 template.create();
 
