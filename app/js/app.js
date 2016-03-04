@@ -1,11 +1,4 @@
-var Vue = require('vue');
-var VueRouter = require('vue-router');
-/**
- * Register plugins.
- */
-Vue.use(require('./plugins/example'));
-Vue.use(require('vue-router'));
-Vue.use(require('vue-resource'));
+var Vue = require('./vue-register');
 
 /**
  * Vue root instance
@@ -23,7 +16,8 @@ var App = Vue.extend({
     }
 });
 
+var VueRouter = require('vue-router');
 var Router = new VueRouter({history: true});
-Router.map(require('./router.js'));
+Router.map(require('./routes.js'));
 Router.start(App, '#app');
 

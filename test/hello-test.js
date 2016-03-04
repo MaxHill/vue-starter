@@ -1,7 +1,12 @@
 var Help = require('./test-helper.js');
-var component = Help.bootstrapComponent(require('../app/js/components/hello'));
 
-describe('Hello', () => {
+describe('Hello component:', () => {
+
+    var component;
+    beforeEach(() => {
+        component = Help.bootstrapComponent(require('../app/js/components/hello'));
+    });
+
     it('should exist', () => {
         expect(typeof component).toBe('object');
     });
@@ -15,4 +20,5 @@ describe('Hello', () => {
         component.changeName();
         expect(component.name).toBe('Carina');
     });
+
 });

@@ -1,4 +1,4 @@
-#Investment time
+#Sara - client
 An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together.
 
 ## Table of contents
@@ -101,9 +101,12 @@ Think of this lika a php trait if you want.
 These are the different views or "pages" of your application. It can for example be the /about page.
 
 #### App.js
-This is your main javascript file where everything is bootstrapped. Here you instanciate plugins, set application wide preferences and specify your routes. Think of this as your index.php if you want.
+This is your main javascript file where everything is required and setup. We register our root vue instance and router. Finally we boot the application.
 
-#### Router.js
+#### vue-register.js
+This is where your root vue instance is setup. This is where plugins are setup. Why we do this in a separate file is because we want to be able to use this file in our tests aswell.
+
+#### Routes.js
 This is just a simple javascript object where you specify your routes. Nothing more. Nothing less.
 
 #### Commands
