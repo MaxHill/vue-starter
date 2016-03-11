@@ -22,7 +22,8 @@ module.exports = function(config) {
 
         browserify: {
             debug: false,
-            transform: ['babelify', 'stringify']
+            transform: ['babelify', 'stringify'],
+            plugin: [require('proxyquireify').plugin]
         },
 
         // list of files to exclude
@@ -57,7 +58,7 @@ module.exports = function(config) {
 
         // start these browsers
         // available browser launchers: https://npmjs.org/browse/keyword/karma-launcher
-        browsers: ['PhantomJS'],
+        browsers: ['PhantomJS2'],
 
         // Continuous Integration mode
         // if true, Karma captures browsers, runs the tests and exits
