@@ -1,0 +1,23 @@
+{
+  "schema": {
+    "name": {
+      "type": "string",
+      "required": true,
+      "label": "Project name"
+    },
+    "description": {
+      "type": "string",
+      "required": true,
+      "label": "Project description",
+      "default": "An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together."
+    },
+    "author": {
+      "type": "string",
+      "label": "Author"
+    },
+    "private": {
+      "type": "boolean",
+      "default": true
+    }
+  }
+}
