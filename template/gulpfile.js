@@ -30,7 +30,7 @@ function compile(watch) {
                     title: 'Scripts filed to compile',
                     message: 'Scripts compilation failed',
                     sound: true,
-                    icon: './public/images/fail.png',
+                    icon: './app/images/fail.png',
                 });
                 console.error(err);
                 this.emit('end');
@@ -52,7 +52,7 @@ function compile(watch) {
             .pipe(notify({
                 title: 'Scripts compiled',
                 message: 'Scripts compiled successfully',
-                icon: './public/images/success.png',
+                icon: './app/images/success.png',
             }));
     }
 
@@ -80,7 +80,7 @@ gulp.task('styles', function() {
             title: 'Styles failed to compile',
             message: 'Styles compilation failed',
             sound: true,
-            icon: './public/images/fail.png',
+            icon: './app/images/fail.png',
         });
         console.error(err);
         this.emit('end');
@@ -100,7 +100,7 @@ gulp.task('styles', function() {
     .pipe(notify({
             title: 'Styles',
             message: 'Styles task complete',
-            icon: './public/images/success.png',
+            icon: './app/images/success.png',
         }));
 });
 
@@ -145,7 +145,7 @@ function karmaTest() {
           notifier.notify({
               title: 'Tests passed',
               message: 'The test suite passed',
-              icon: './public/images/success.png',
+              icon: './app/images/success.png',
           });
           return;
       }
@@ -153,7 +153,7 @@ function karmaTest() {
           title: 'Tests failed',
           sound: true,
           message: 'The test suite failed with ' + code + ' errors',
-          icon: './public/images/fail.png',
+          icon: './app/images/fail.png',
       });
   }).start();
 };
