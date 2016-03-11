@@ -1,6 +1,19 @@
 #vue - client
 An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together.
 
+### Usage
+
+This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
+
+``` bash
+$ npm install -g vue-cli
+$ vue init browserify my-project
+$ cd my-project
+$ git init
+$ npm install
+$ npm run dev
+```
+
 ## Table of contents
 
 * [Installation](#installation)
