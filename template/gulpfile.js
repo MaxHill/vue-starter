@@ -1,7 +1,7 @@
 var gulp = require('gulp'),
     postcss = require('gulp-postcss'),
     notify = require('gulp-notify'),
-    sass = require('gulp-ruby-sass'),
+    sass = require('gulp-sass'),
     sourcemaps = require('gulp-sourcemaps'),
     autoprefixer = require('autoprefixer'),
     lost = require('lost'),
