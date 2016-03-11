@@ -7,7 +7,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init browserify my-project
+$ vue init MaxHill/investment my-project
 $ cd my-project
 $ git init
 $ npm install
