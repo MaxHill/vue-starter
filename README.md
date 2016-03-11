@@ -11,7 +11,7 @@ $ vue init MaxHill/investment my-project
 $ cd my-project
 $ git init
 $ npm install
-$ npm run dev
+$ npm start / $ gulp 
 ```
 
 ## Table of contents

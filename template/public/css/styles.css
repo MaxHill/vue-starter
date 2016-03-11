@@ -1,0 +1,10 @@
+body {
+  background: #efefef;
+  color: #252525;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font-size: 110%;
+}
+
+.main-container {
+  padding-top: 70px;
+}
