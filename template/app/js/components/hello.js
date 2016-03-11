@@ -10,15 +10,15 @@ module.exports = {
 
     data() {
         return {
-            name: 'Max',
+            person: 'Max',
             index: 1
         };
     },
 
     methods: {
-        changeName() {
-            let names = ['Max', 'Carina', 'Edward'];
-            this.name = names[this.index];
+        changePerson() {
+            let persons = ['Max', 'Carina', 'Edward'];
+            this.person = persons[this.index];
 
             this.index ++;
             if (this.index == 3) {
@@ -31,9 +31,9 @@ module.exports = {
     ready() {
         this.scream();
         var self = this;
-        this.changeName();
+        this.changePerson();
         setInterval(function() {
-            self.changeName();
+            self.changePerson();
         }, 1100);
     },
 };
