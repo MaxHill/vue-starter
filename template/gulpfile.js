@@ -72,10 +72,7 @@ function watch() {
 gulp.task('scripts', function() { return compile(); });
 
 gulp.task('styles', function() {
-    return sass('app/sass/styles.scss', {
-        'sourcemap=none': true,
-        style: 'expanded'
-    }).on('error', function(error) {
+    return gulp.src('app/sass/styles.scss').pipe(sass().on('error', function(error) {
         notifier.notify({
             title: 'Styles failed to compile',
             message: 'Styles compilation failed',
@@ -84,7 +81,7 @@ gulp.task('styles', function() {
         });
         console.error(err);
         this.emit('end');
-    })
+    }))
     .pipe(sourcemaps.init())
     .pipe(postcss([
       lost(),
@@ -102,6 +99,7 @@ gulp.task('styles', function() {
             message: 'Styles task complete',
             icon: './app/images/success.png',
         }));
+
 });
 
 /**
