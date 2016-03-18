@@ -1,35 +1,33 @@
 #vue - client
 An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together.
 
-### Usage
-
-This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
-
-``` bash
-$ npm install -g vue-cli
-$ vue init MaxHill/investment my-project
-$ cd my-project
-$ git init
-$ npm install
-$ npm start / $ gulp 
-```
-
 ## Table of contents
 
-* [Installation](#installation)
+* [Usage / installation](#usage-installation)
 * [Actions](#actions)
 * [Generators](#generators)
 * [Testing](#testing)
 * [What goes where?](#what-goes-where)
 
-##Installation:
+## Usage / installation
 
-~~~bash
-$ git clone https://github.com/MaxHill/investment.git
-$ cd investment
+This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
+
+``` bash
+#Create new project
+$ npm install -g vue-cli	#only needed first time
+$ vue init MaxHill/investment my-project
+
+#Install your project
+$ cd my-project
+$ git init	#needed for pre-commit hook
 $ npm install
-$ gulp
-~~~
+
+#Run your project
+$ npm start
+# or
+$ gulp 
+```
 
 ##Actions
 `$ npm start` / `$ gulp` Run this when you want to develop. Starts the *dev server*, *watchers* and *transpilers* etc.
@@ -51,33 +49,41 @@ alias g:t="npm run-script generate:test"
 
 ###Page
 
-`$ g:p --name="about"` or
-
-`$ npm run-script generate:page --name="about"`
+~~~bash
+$ g:p --name="about"` 
+# or
+$ npm run-script generate:page --name="about"
+~~
 
 This wil create both a template file and a page component file.
 Dont forget to add the page component file to the router in `app/js/app.js`
 
 ###Component
-`$ g:c --name="navigation"` or
-
-`$ npm run-script generate:component --name="navigation"`
+~~~bash
+$ g:c --name="navigation"` 
+# or
+$ npm run-script generate:component --name="navigation"
+~~~
 
 This wil create both a template file and a component file.
 
-###Mixins
-`$ g:m --name="canAuthenticate"` or
-
-`$ npm run-script generate:mixin --name="canAuthenticate"`
+###Mixin
+~~~bash
+$ g:m --name="canAuthenticate"` 
+# or
+$ npm run-script generate:mixin --name="canAuthenticate"
+~~~
 
 This will create a mixin file.
 
-###Tests
-`$ g:t --name="navigation"` or
+###Test
+~~~bash
+$ g:t --name="navigation"
+# or
+$ npm run-script generate:test --name="navigation"
+~~~
 
-`$ npm run-script generate:test --name="navigation"`
-
-This will create a test stub. With the option component the test-stub will bootstrap that component. With the name option it will not.
+This will create a test stub.
 ##Testing
 The project is setup with the **jasmine** and the **karma** for testing.
 You can find an example test in the `/test` folder.
@@ -85,6 +91,101 @@ You can find an example test in the `/test` folder.
 You can generate a new test stub with the [generate:test command](#tests) or manually create the new test file.
 For your conveniance there is a `test-helper.js` file with a method for botstrapping a component with an empty vue instance.
 You can of course add your own testing methods to this file.
+
+###Testing components / mixins
+To test components and mixins we need to instanciate them witha a vue instance. Fortunatly we get some help with that. This project includes the helper functions "bootstrapComponent" & "bootstrapMixin". These functions can be called before each assertion. 
+
+####Here follows an example of how you might test an example component.
+Explination below.
+
+Generate the component and test:
+
+~~~bash
+$ g:c --name="greeting"
+$ g:t --name="greeting"
+# or
+$ npm run generate:test --name="greeting"
+$ npm run generate:test --name="greeting"
+~~~
+
+And write the following in the generated files.
+
+~~~js
+//app/js/components/greeting.js
+
+module.exports = {
+	template: require('./greeting.template.html'),
+	data: {
+		return {
+			names:['John Doe']
+		}
+	},
+	methods() {
+		addName(name) {
+			this.names.push(name)
+		}
+	}
+}
+~~~
+
+~~~html
+<!-- app/js/components/greeting.template.html -->
+
+<div>
+	<ul>
+		<li v-for="name in names">Hello {{ name }}!</li>
+	</ul>
+	<button @click="addName('world')">Say hello to the world</button>
+</div>
+~~~
+
+~~~js
+//app/test/greeting.test.js
+
+var Help = require('./test-helper.js');
+
+describe('Greeting component', () => {
+
+    var component;
+    beforeEach(() => {
+        component = Help.bootstrapComponent(require('../app/js/components/greeting'));
+    });
+    
+	/*
+	* Assert the component exists and is object.
+	*/
+    it('should exist', () => {
+        expect(typeof component).toBe('object');
+    });
+	
+	/*
+	* Assert that some data is set correctly on the component.
+	*/
+    it('should initialy have the names attribute set correctly', () => {
+        expect(component.names).toBe(['John Doe']);
+    });
+
+	/*
+	* Assert you can call a method to add a name to the name list.
+	*/
+    it('should be able to add a name to the name list', () => {
+        expect(component.names).toBe(['John Doe']);
+        component.addName('Test Person');
+        expect(component.name).toBe(['John Doe', 'Test Person']);
+    });
+
+});
+~~~
+
+Make sure it all works by running `$ npm test`.
+
+####Woa! What is happening here? Let's dig in!
+
+Well, first we define our basic greeting component that will display an unordered list of greetings. The next thing we do is define the template for said component. Notice the button for adding world to the list of names we want to greet.
+
+Now to the actual test. The first thing we do is include the test-helper file. This is the file that holds our bootstrap methods we talked about earlier. After that we start the test by saying we want to describe the "Greeting component". The "beforeEach" method will be called before each assertion (`it('should...`). Here we use our helper method to bootstrap our component. This is so we in each assertion will have a fresh copy of our component.
+
+We begin with testing that the component exist by making sure the type is object. We proceed with making sure the component has the correct default data. Finally we make sure we can add a name to the list of names.
 
 ## What goes where?
 
