@@ -10,7 +10,9 @@ describe('${test.capitalize(test.name)}', () => {
 
     var ${test.capitalize(test.name)};
     beforeEach(() => {
-        ${test.capitalize(test.name)} = Help.bootstrapComponent(require('../app/js/components/${test.name}.js'));
+        ${test.capitalize(test.name)} = Help.bootstrapComponent(
+            require('../app/js/components/${test.name}.js')
+        );
     });
 
     it('should exist', () => {
