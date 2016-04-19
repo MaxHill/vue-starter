@@ -1,5 +1,5 @@
-#{{ name }}
-> {{ description }}
+#e2e
+> An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together.
 ## Table of contents
 
 * [Installation](#installation)
@@ -127,7 +127,7 @@ module.exports = {
 
 <div>
 	<ul>
-		<li v-for="name in names">Hello {{ name }}!</li>
+		<li v-for="name in names">Hello e2e!</li>
 	</ul>
 	<button @click="addName('world')">Say hello to the world</button>
 </div>
