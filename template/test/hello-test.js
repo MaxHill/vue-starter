@@ -4,7 +4,8 @@ describe('Hello component:', () => {
 
     var component;
     beforeEach(() => {
-        component = Help.bootstrapComponent(require('../app/js/components/hello'));
+        component =
+            Help.bootstrapComponent(require('../app/js/components/hello'));
     });
 
     it('should exist', () => {
