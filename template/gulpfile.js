@@ -3,6 +3,15 @@ var runSequence = require('run-sequence');
 
 
 /**
+ * Webserver
+ */
+
+// Start server
+var server = require('./build-tasks/server');
+gulp.task('webserver', function() { return server(); });
+
+
+/**
  * Scripts
  */
 
@@ -26,9 +35,10 @@ gulp.task('test-pre-commit', function() { return unitTest(true); });
 // e2e tests
 var e2eTest = require('./build-tasks/e2e-test-js');
 gulp.task('nightwatch', function() { return e2eTest(); });
+gulp.task('e2e-server', function() { return server(false,8888); });
 gulp.task('e2e', function() {
     runSequence(
-        'webserver',
+        'e2e-server',
         'nightwatch',
         function(err) {
             if (err) {
@@ -64,20 +74,6 @@ gulp.task('images', function() {
     gulp.src('./app/images/**/*')
     .pipe(gulp.dest('./public/images/'));
 });
-
-
-
-
-/**
- * Webserver
- */
-
-// Start server
-var server = require('./build-tasks/server');
-gulp.task('webserver', function() { return server(); });
-
-
-
 
 /**
  * Build

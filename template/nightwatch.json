@@ -20,7 +20,7 @@
 
   "test_settings" : {
     "default" : {
-      "launch_url" : "http://localhost",
+      "launch_url" : "http://localhost:8888",
       "selenium_port"  : 4444,
       "selenium_host"  : "localhost",
       "silent": true,
@@ -29,9 +29,10 @@
         "path" : ""
       },
       "desiredCapabilities": {
-        "browserName": "firefox",
+        "browserName": "phantomjs",
         "javascriptEnabled": true,
-        "acceptSslCerts": true
+        "acceptSslCerts": true,
+        "phantomjs.binary.path": "node_modules/phantomjs/bin/phantomjs"
       }
     },
 
@@ -41,6 +42,14 @@
         "javascriptEnabled": true,
         "acceptSslCerts": true
       }
+    },
+    "firefox" : {
+      "desiredCapabilities": {
+        "browserName": "firefox",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
     }
+
   }
 }
