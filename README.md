@@ -16,7 +16,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli).
 ``` bash
 # Create new project
 $ npm install -g vue-cli	#only needed first time
-$ vue init MaxHill/investment my-project
+$ vue init MaxHill/vue-starter my-project
 
 # Install your project
 $ cd my-project
