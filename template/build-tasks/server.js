@@ -7,7 +7,6 @@ module.exports = function(livereload, port) {
     }
     if (typeof livereload == 'undefined') {
         livereload = true;
-        console.log('server.js', 'Yes livererload');
     }
     gulp.src('public')
     .pipe(webserver({

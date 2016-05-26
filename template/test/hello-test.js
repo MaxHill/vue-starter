@@ -4,8 +4,8 @@ describe('Hello component:', () => {
 
     var component;
     beforeEach(() => {
-        component =
-            Help.bootstrapComponent(require('../app/js/components/hello'));
+        let hello = require('../app/js/components/hello');
+        component = Help.bootstrapComponent(hello);
     });
 
     it('should exist', () => {
@@ -19,7 +19,6 @@ describe('Hello component:', () => {
     it('should be able to call a method on a bootstraped component', () => {
         expect(component.name).toBe('Max');
         component.changeName();
-        expect(component.name).toBe('Carina');
+        expect(component.name).toBe('Charlie');
     });
-
 });

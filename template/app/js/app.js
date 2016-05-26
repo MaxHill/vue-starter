@@ -1,9 +1,9 @@
-var Vue = require('./vue-register');
+let Vue = require('./vue-register');
 
 /**
  * Vue root instance
  */
-var App = Vue.extend({
+let App = Vue.extend({
     data() {
         return {};
     },
@@ -16,8 +16,8 @@ var App = Vue.extend({
     }
 });
 
-var VueRouter = require('vue-router');
-var Router = new VueRouter({history: true});
+let VueRouter = require('vue-router');
+let Router = new VueRouter({history: true});
 Router.map(require('./routes.js'));
 Router.start(App, '#app');
 

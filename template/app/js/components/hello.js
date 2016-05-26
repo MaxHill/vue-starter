@@ -17,7 +17,7 @@ module.exports = {
 
     methods: {
         changeName() {
-            let names = ['Max', 'Carina', 'Edward'];
+            let names = ['Max', 'Charlie', 'Edward'];
             this.name = names[this.index];
 
             this.index ++;

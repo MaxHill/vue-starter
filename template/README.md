@@ -23,14 +23,19 @@ $ cd my-project
 $ git init	#needed for pre-commit hook
 $ npm install
 
-#Run your project
+#Run a server
+$ gulp serve
+
+#Compile your project
 $ npm start
 # or
-$ gulp
+$ gulp watch
 ```
 
 ##Actions
-`$ npm start` / `$ gulp` Run this when you want to develop. Starts the *dev server*, *watchers* and *transpilers* etc.
+`$ npm start` / `$ gulp watch` Run this when you want to develop. Starts the *watchers* and *transpilers* etc.
+
+`$ gulp server` Starts a local http server.
 
 `$ npm test` Runs the unit tests once (this is done automatically when running gulp)
 

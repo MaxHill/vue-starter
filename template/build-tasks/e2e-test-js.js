@@ -7,22 +7,16 @@ module.exports = function() {
     .pipe(nightwatch({
         configFile: './nightwatch.json'
     }).on('error', function(error) {
-        if (!preCommit) {
-            notifier.notify({
-                title: 'Tests failed',
-                sound: true,
-                message: 'The test suite failed with ' + code + ' errors',
-                icon: './app/images/fail.png',
-            });
-        }else {
-            process.exit(-1);
-        }
-    }));
-    if (!preCommit) {
         notifier.notify({
-            title: 'Tests passed',
-            message: 'The test suite passed',
-            icon: './app/images/success.png',
+            title: 'Tests failed',
+            sound: true,
+            message: 'The test suite failed',
+            icon: './app/images/fail.png',
         });
-    }
+    }));
+    notifier.notify({
+        title: 'Tests passed',
+        message: 'The test suite passed',
+        icon: './app/images/success.png',
+    });
 };
