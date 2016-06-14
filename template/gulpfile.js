@@ -47,3 +47,19 @@ gulp.task('pre-commit', [
     'lintJs',
     'test'
 ]);
+
+
+// minify svgs
+
+var svgmin          = require('gulp-svgmin'),
+    svgstore        = require('gulp-svgstore'),
+    cheerio         = require('gulp-cheerio');
+
+gulp.task('icons', function() {
+    return gulp.src('./app/images/icons/{,*/}*.svg')
+        .pipe(svgmin())
+        .pipe(svgstore())
+        .pipe(cheerio($ => $('svg').attr('style',  'display:none')))
+        .pipe(gulp.dest(`./public/icons`));
+});
+

@@ -6,6 +6,14 @@ module.exports = {
     template: require('./nav.template.html'),
 
     data() {
-        return {};
+        return {
+            vissible: false
+        };
     },
+
+    methods: {
+        toggle() {
+            this.vissible = !this.vissible;
+        }
+    }
 };
