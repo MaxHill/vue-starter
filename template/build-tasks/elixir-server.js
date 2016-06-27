@@ -18,12 +18,9 @@ var config = Elixir.config;
 
 Elixir.extend('serve', function(options) {
     var options = setDefaults(options);
-    this.onWatch(() => gulp.start('serve'));
 
     return new Elixir.Task('serve', function() {
-        Elixir.Log.heading(
-            'Starting server on: http://localhost:' + options.port
-        );
+        this.recordStep('Starting server on: http://localhost:' + options.port);
         gulpTask(options);
     });
 });

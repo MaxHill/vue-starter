@@ -1,5 +1,6 @@
 var gulp = require('gulp');
 var elixir = require('laravel-elixir');
+require('laravel-elixir-browserify-official');
 
 require('./build-tasks/test');
 require('./build-tasks/elixir-server');
@@ -20,8 +21,9 @@ elixir(function(mix) {
     // Don't run some tasks in production.
     if (!elixir.config.production) {
         mix
-            .test(['app/js/**/*.js', 'test/**/*.js'])
-            .serve();
+            .serve()
+            .test(['app/js/**/*.js', 'test/**/*.js']);
+
     }
 });
 

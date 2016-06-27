@@ -9,6 +9,7 @@ var Task = Elixir.Task;
 Elixir.extend('test', function(src) {
 
     new Task('test', function() {
+        this.recordStep('Starting tests...');
         return new Test({
             configFile: __dirname + '/../karma.conf.js',
             singleRun: true

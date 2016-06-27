@@ -4,12 +4,36 @@
     <meta charset="UTF-8">
     <title>Test</title>
     <meta name="viewport" content="initial-scale=1, maximum-scale=1">
+    <link rel="stylesheet" type="text/css" href="css/app.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.2/css/bootstrap.min.css" integrity="sha384-y3tfxAZXuh4HwSYylfB+J125MxIs6mR5FOHamPBG064zB+AFeWH94NdvaCBm8qnd" crossorigin="anonymous">
+
 </head>
 <body>
+    <!-- inject:svg --><!-- endinject -->
+    <div id="app">
+        <navigation></navigation>
+        <div class="container main-container">
+            <router-view></router-view>
+        </div>
+    </div>
 
-    <center style="margin-top:60px;">
-        <h3 style="font-weight: 100;">Waiting for intial build...</h3>
-    </center>
+    <script src="js/app.js"></script>
+    <!-- load combined svg file (with symbols) into body-->
+      <script>
+        (function (doc) {
+          var scripts = doc.getElementsByTagName('script')
+          var script = scripts[scripts.length - 1]
+          var xhr = new XMLHttpRequest()
+          xhr.onload = function () {
+            var div = doc.createElement('div')
+            div.innerHTML = this.responseText
+            div.style.display = 'none'
+            script.parentNode.insertBefore(div, script)
+          }
+          xhr.open('get', '/icons/icons.svg', true)
+          xhr.send()
+        })(document)
+      </script>
 
 </body>
 </html>

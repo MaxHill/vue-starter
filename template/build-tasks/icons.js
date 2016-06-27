@@ -21,14 +21,10 @@ var config = Elixir.config;
 Elixir.extend('icons', function(src, output, baseDir) {
     var paths = prepGulpPaths(src, output, baseDir);
 
-    this.onWatch(() => gulp.start('icons'));
-
     return new Elixir.Task('icons', function() {
-        this.log(paths.src, paths.output);
-
-        gulpTask(paths);
-    }).watch(paths.src.path);
-})
+        gulpTask(paths, this);
+    }, paths).watch(paths.src.path);
+});
 
 /**
  * Create the Gulp task.
@@ -37,18 +33,21 @@ Elixir.extend('icons', function(src, output, baseDir) {
  * @param  {object}    options
  * @return {mixed}
  */
-function gulpTask(paths) {
+function gulpTask(paths, task) {
     return (
         gulp.src(paths.src.path)
         .pipe(svgmin())
+        // .pipe(task.recordStep('Minifying'))
         .pipe(svgstore())
         .on('error', function(e) {
             new Elixir.Notification('Icon Compilation failed');
 
             this.emit('end');
         })
+        // .pipe(task.recordStep('Combining'))
         .pipe(cheerio($ => $('svg').attr('style',  'display:none')))
-        .pipe(gulp.dest(paths.output.baseDir))
+        // .pipe(task.recordStep('Hiding'))
+        .pipe(task.saveAs(gulp))
         .pipe(new Elixir.Notification('Icons Compiled'))
     );
 }

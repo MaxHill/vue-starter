@@ -39,6 +39,7 @@
     "karma-phantomjs-launcher": "^1.0.0",
     "karma-spec-reporter": "0.0.24",
     "laravel-elixir": "^6.0.0-2",
+    "laravel-elixir-browserify-official": "^0.1.2",
     "laravel-elixir-karma": "^0.2.2",
     "nightwatch": "^0.8.18",
     "node-notifier": "^4.4.0",
