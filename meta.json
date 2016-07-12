@@ -1,23 +1,59 @@
 {
-  "schema": {
-    "name": {
-      "type": "string",
-      "required": true,
-      "label": "Project name"
+    "prompts": {
+        "name": {
+            "type": "string",
+            "required": true,
+            "message": "Project name"
+        },
+        "description": {
+            "type": "string",
+            "required": false,
+            "message": "Project description",
+            "default": "A Vue.js project"
+        },
+        "author": {
+            "type": "string",
+            "message": "Author"
+        },
+        "lint": {
+            "type": "confirm",
+            "message": "Use ESLint to lint your code?"
+        },
+        "lintConfig": {
+            "when": "lint",
+            "type": "list",
+            "message": "Pick an ESLint preset",
+            "choices": [
+                {
+                    "name": "Google (https://google.github.io/styleguide/javascriptguide.xml)",
+                    "value": "google",
+                    "short": "google"
+                },
+                {
+                    "name": "Standard (https://github.com/feross/standard)",
+                    "value": "standard",
+                    "short": "Standard"
+                },
+                {
+                    "name": "none (configure it yourself)",
+                    "value": "none",
+                    "short": "none"
+                }
+            ]
+        },
+        "unit": {
+            "type": "confirm",
+            "message": "Setup unit tests with Karma + Mocha?"
+        },
+        "e2e": {
+            "type": "confirm",
+            "message": "Setup e2e tests with Nightwatch?"
+        }
     },
-    "description": {
-      "type": "string",
-      "required": true,
-      "label": "Project description",
-      "default": "An opinionated **Vue** project setup with **karma** / **jasmine** tests. **Es6** transpilation with **babel**. And some **browserify** magic to tie it all together."
+    "filters": {
+        ".eslintrc.js": "lint",
+        "test/unit/**/*": "unit",
+        "test/e2e/**/*": "e2e"
     },
-    "author": {
-      "type": "string",
-      "label": "Author"
-    },
-    "private": {
-      "type": "boolean",
-      "default": true
-    }
-  }
+    "completeMessage": "To get started:\n\n  cd {{destDirName}}\n  npm install\n  npm run dev\n\nDocumentation can be found at https://vuejs-templates.github.io/webpack"
 }
