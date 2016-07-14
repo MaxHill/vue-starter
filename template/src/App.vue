@@ -19,6 +19,11 @@
             <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
             <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
         </p>
+
+        <!-- Don't let the icon sprite take up space -->
+        <div style="display:none">
+            {{ icons }}
+        </div>
     </div>
 </template>
 
@@ -28,6 +33,11 @@
 import Hello from './components/Hello'{{#if_eq lintConfig "google"}};{{/if_eq}}
 
 export default {
+    data() {
+        return {
+            icons: require('svg-inline?!./assets/icons.svg')
+        };
+    },
     components: {
         Hello
     }

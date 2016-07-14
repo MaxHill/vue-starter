@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<svg xmlns="http://www.w3.org/2000/svg">
+<symbol id="logo" viewBox="0 0 32 32"><g transform="translate(0, 0)">
+<polyline data-cap="butt" data-color="color-2" fill="none" stroke="#373a3c" stroke-width="2" stroke-miterlimit="10" points="2,6 16,10 30,6 " stroke-linejoin="miter" stroke-linecap="butt"/>
+<line data-cap="butt" data-color="color-2" fill="none" stroke="#373a3c" stroke-width="2" stroke-miterlimit="10" x1="16" y1="10" x2="16" y2="30" stroke-linejoin="miter" stroke-linecap="butt"/>
+<polygon fill="none" stroke="#373a3c" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" points="30,25 16,30 2,25 
+	2,6 16,2 30,6 " stroke-linejoin="miter"/>
+</g>
+</symbol>
+<symbol id="menu" viewBox="0 0 24 24"><g transform="translate(0, 0)">
+<line data-color="color-2" fill="none" stroke="#444444" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="1" y1="12" x2="23" y2="12" stroke-linejoin="miter"/>
+<line fill="none" stroke="#444444" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="1" y1="5" x2="23" y2="5" stroke-linejoin="miter"/>
+<line fill="none" stroke="#444444" stroke-width="2" stroke-linecap="square" stroke-miterlimit="10" x1="1" y1="19" x2="23" y2="19" stroke-linejoin="miter"/>
+</g>
+</symbol></svg>

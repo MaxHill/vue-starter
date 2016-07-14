@@ -96,9 +96,10 @@
     "webpack-dev-middleware": "^1.4.0",
     "webpack-hot-middleware": "^2.6.0",
     "webpack-merge": "^0.8.3",
+    "svg-inline-loader": "^0.6.1",
     "svg-sprite-generator": "0.0.7",
     "onchange": "^2.5.0",
     "parallelshell": "^2.0.0",
-    "cli-color": "^1.1.0"    
+    "cli-color": "^1.1.0"
   }
 }
