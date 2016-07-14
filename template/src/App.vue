@@ -22,7 +22,7 @@
 
         <!-- Don't let the icon sprite take up space -->
         <div style="display:none">
-            {{ icons }}
+            \{{{ icons }}}
         </div>
     </div>
 </template>
