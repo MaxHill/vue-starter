@@ -1,25 +1,26 @@
 var Generate = require('./support/Generate');
 
-var component = new Generate('src/components');
-component.setContent(`<template>
+// Create View
+var view = new Generate('src/views');
+view.setContent(`<template>
     <div>
-        <p>${ component.name } component<p>
+        <p>${ view.name } view<p>
         // Template content
     </div>
 </template>
 
 <script>
 /**
- * The ${ component.name } component.
+ * The ${ view.name } view.
  * @type {Object}
  */
 export default {
     components: {
-        // Sub-components
+        // Components
     },
     methods: {
         // Methods
     },
 };
 </script>`);
-component.create();
+view.create();
