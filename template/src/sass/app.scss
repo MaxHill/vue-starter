@@ -1,17 +1,8 @@
-body {
-    color: #252525;
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
-    font-size: 1em;
-    line-height: 1.5;
-    font-size: 110%;
-}
+// Base
+@import 'base/variables';
+@import 'base/reset';
+@import 'base/presets';
+@import 'base/typography';
 
-.Hero__title {
-    margin-top: 5rem;
-    font-weight: 100;
-    text-align: center;
-}
-
-.Hero__text {
-    margin-top: 5rem;
-}
+// Components
+@import 'components/hero'
