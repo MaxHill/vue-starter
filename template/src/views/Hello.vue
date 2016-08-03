@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <h1 class="Hero__title">Hello? Is it me you are looking for?</h1>
+        <h1 class="Hero__title">Hello?</h1>
         <div class="text-xs-center">
             <img
                 src="http://www.festivalrykten.se/wp-content/uploads/2016/02/rich.jpg"

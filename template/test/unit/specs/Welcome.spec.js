@@ -10,6 +10,6 @@ describe('Welcome component', () => {
 
         expect(vm.$el.querySelector('.Hero__title').textContent)
         .to
-        .contain('Welcome to vue-starters');
+        .contain('Welcome to vue-starter');
     });
 });

@@ -5,11 +5,11 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "watch": "parallelshell 'npm run webpack' 'npm run watch:icons'",
+    "dev": "parallelshell 'npm run webpack' 'npm run watch:icons'",
     "webpack": "node build/dev-server.js && echo 'Done!' ",
     "build": "node build/build.js",
     {{#unit}}
-    "unit": "karma start test/unit/karma.conf.js --single-run",
+    "unit": "node test/unit/runner.js",
     {{/unit}}
     {{#e2e}}
     "e2e": "node test/e2e/runner.js",
