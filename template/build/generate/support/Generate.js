@@ -9,7 +9,7 @@ var File = require('./File');
 function Generate(dir, extension) {
     this.clc = require('cli-color');
     this.dir = (dir) ? '../../' + dir + '/' : '';
-    this.extension = (extension) ? '.' + extension : '.js';
+    this.extension = (extension) ? '.' + extension : '.vue';
     this.content = null;
     this.name = null;
     this.error = 0;

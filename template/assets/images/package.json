@@ -5,8 +5,8 @@
   "author": "{{ author }}",
   "private": true,
   "scripts": {
-    "watch": "parallelshell 'npm run dev' 'npm run watch:icons'",
-    "dev": "node build/dev-server.js && echo 'Done!' ",
+    "watch": "parallelshell 'npm run webpack' 'npm run watch:icons'",
+    "webpack": "node build/dev-server.js && echo 'Done!' ",
     "build": "node build/build.js",
     {{#unit}}
     "unit": "karma start test/unit/karma.conf.js --single-run",
@@ -18,14 +18,13 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"{{/lint}},
     "icons": "svg-sprite-generate -d src/assets/icons -o src/assets/icons.svg",
     "watch:icons": "onchange 'src/assets/icons/*.svg' -- npm run icons",
-    "generate:page": "node  build/generate/page.js",
+    "generate:view": "node  build/generate/view.js",
     "generate:component": "node  build/generate/component.js",
-    "generate:mixin": "node  build/generate/mixin.js",
-    "generate:test": "node  build/generate/test.js",
-    "generate:plugin": "node  build/generate/plugin.js"
+    "generate:test": "node  build/generate/test.js"
   },
   "dependencies": {
     "vue": "^1.0.21",
+    "vue-router": "^0.7.13",
     "babel-runtime": "^6.0.0"
   },
 

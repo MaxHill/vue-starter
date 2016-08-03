@@ -1,6 +1,7 @@
 <template>
-    <div class="hello">
-        <h1>\{{ msg }}</h1>
+    <div class="Hero">
+        <h1 class="Hero__title">\{{ msg }}</h1>
+        <p class="Hero__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum animi natus voluptate ab harum cupiditate, quo accusantium cumque nihil, mollitia, beatae. Neque officiis, quaerat voluptas numquam vel provident. Alias, praesentium.</p>
     </div>
 </template>
 
@@ -12,15 +13,8 @@ export default {
             // with hot-reload because the reloaded component
             // preserves its current state and we are modifying
             // its initial state.
-            msg: 'Hello World!'
+            msg: 'Welcome to vue-starter'
         }{{#if_eq lintConfig "google"}};{{/if_eq}}
     }
 }{{#if_eq lintConfig "google"}};{{/if_eq}}
 </script>
-
-<!-- Add "scoped" attribute to limit CSS to this component only -->
-<style scoped>
-h1 {
-    color: #42b983;
-}
-</style>

@@ -46,8 +46,8 @@
                 >Home</a>
                 <a
                     class="nav-item nav-link"
-                    v-link="{ path: '/about' }"
-                    >About</a>
+                    v-link="{ path: '/hello' }"
+                >Hello?</a>
 
             </nav>
         </div>
