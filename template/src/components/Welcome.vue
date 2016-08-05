@@ -1,7 +1,13 @@
 <template>
-    <div class="Hero">
-        <h1 class="Hero__title">\{{ msg }}</h1>
-        <p class="Hero__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum animi natus voluptate ab harum cupiditate, quo accusantium cumque nihil, mollitia, beatae. Neque officiis, quaerat voluptas numquam vel provident. Alias, praesentium.</p>
+    <div class="Welcome">
+        <h1 class="Welcome__title">\{{ msg }}</h1>
+        <nav class="Welcome__links">
+            <a
+                v-for="link in links"
+                class="Welcome__link"
+                href="\{{ link.url }}"
+            >\{{ link.name }}</a>
+        </nav>
     </div>
 </template>
 
@@ -13,7 +19,21 @@ export default {
             // with hot-reload because the reloaded component
             // preserves its current state and we are modifying
             // its initial state.
-            msg: 'Welcome to vue-starter'
+            msg: 'Build something awesome!',
+            links: [
+                {
+                    name: 'Github',
+                    url: 'https://github.com/MaxHill/vue-starter'
+                },
+                {
+                    name: 'Documentation',
+                    url: 'https://github.com/MaxHill/vue-starter/tree/master/docs'
+                },
+                {
+                    name: 'Max',
+                    url: 'https://twitter.com/maxpeterhill'
+                }
+            ]
         }{{#if_eq lintConfig "google"}};{{/if_eq}}
     }
 }{{#if_eq lintConfig "google"}};{{/if_eq}}

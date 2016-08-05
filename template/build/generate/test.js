@@ -2,24 +2,23 @@
 var Generate = require('./support/Generate');
 
 // Create Template
-var test = new Generate('test/unit/spec', 'test.js');
+var test = new Generate('test/unit/specs', 'spec.js');
 
-test.setContent(`var Help = require('./test-helper.js');
+test.setContent(`import ${test.capitalize(test.name)} from 'src/components/${test.capitalize(test.name)}';
+import Help from '../helpers';
 
-describe('${test.capitalize(test.name)}', () => {
+describe('${test.capitalize(test.name)} component', () => {
+    let component;
+    let vm;
 
-    var ${test.capitalize(test.name)};
     beforeEach(() => {
-        ${test.capitalize(test.name)} = Help.bootstrapComponent(
-            require('../app/js/components/${test.name}.js')
-        );
+        vm = Help.bootstrapComponent(${test.capitalize(test.name)});
+        component = vm.$refs.testComponent;
     });
 
-    it('should exist', () => {
-        expect(typeof ${test.capitalize(test.name)}).toBe('object');
+    it('should ', () => {
+        // test
     });
-
-    // Add more tests here.
 });
 `);
 

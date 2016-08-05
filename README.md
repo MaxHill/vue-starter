@@ -4,7 +4,7 @@
 
 ## Documentation
 
-Common topics are discussed in the [docs](http://vuejs-templates.github.io/webpack). Make sure to read it!
+Common topics are discussed in the [docs](https://github.com/MaxHill/vue-starter/tree/master/docs). Make sure to read it!
 
 ## Usage
 
@@ -26,6 +26,7 @@ $ npm run dev
   - State preserving compilation error overlay
   - Lint-on-save with ESLint
   - Source maps
+  - Svg minification & spriting
 
 - `npm run build`: Production ready build.
   - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).

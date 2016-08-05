@@ -1,10 +1,27 @@
+# Summary
+Follow the links to read about the different topics.
+
+- [Home](https://github.com/MaxHill/vue-starter/tree/master/docs)
+- [Structure](https://github.com/MaxHill/vue-starter/tree/master/docs/structure.md)
+- [Build Commands](https://github.com/MaxHill/vue-starter/tree/master/docs/commands.md)
+- [Linter Configuration](https://github.com/MaxHill/vue-starter/tree/master/docs/linter.md)
+- [Pre-processor](https://github.com/MaxHill/vue-starter/tree/master/docs/pre-processor.md)
+- [Handle Static Assets](https://github.com/MaxHill/vue-starter/tree/master/docs/static.md)
+- [Environment Variables](https://github.com/MaxHill/vue-starter/tree/master/docs/env.md)
+- [Integrate with Backend Framework](https://github.com/MaxHill/vue-starter/tree/master/docs/backend.md)
+- [API Proxying During Development](https://github.com/MaxHill/vue-starter/tree/master/docs/proxy.md)
+- [Unit](https://github.com/MaxHill/vue-starter/tree/master/docs/unit.md)
+- [E2e](https://github.com/MaxHill/vue-starter/tree/master/docs/e2e.md)
+- [Prerender](https://github.com/MaxHill/vue-starter/tree/master/docs/prerender.md)
+
+
 # Build Commands
 
 All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/scripts).
 
 ### `npm run dev`
 
-> Starts a Node.js local development server. See [API Proxying During Development](proxy.md) for more details.
+> Starts a Node.js local development server. See [API Proxying During Development](https://github.com/MaxHill/vue-starter/tree/master/docs/proxy.md) for more details.
 
 - Webpack + `vue-loader` for single file Vue components.
 - State preserving hot-reload
@@ -14,7 +31,7 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 
 ### `npm run build`
 
-> Build assets for production. See [Integrating with Backend Framework](backend.md) for more details.
+> Build assets for production. See [Integrating with Backend Framework](https://github.com/MaxHill/vue-starter/tree/master/docs/backend.md) for more details.
 
 - JavaScript minified with [UglifyJS](https://github.com/mishoo/UglifyJS2).
 - HTML minified with [html-minifier](https://github.com/kangax/html-minifier).

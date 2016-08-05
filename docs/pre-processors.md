@@ -1,3 +1,20 @@
+# Summary
+Follow the links to read about the different topics.
+
+- [Home](https://github.com/MaxHill/vue-starter/tree/master/docs)
+- [Structure](https://github.com/MaxHill/vue-starter/tree/master/docs/structure.md)
+- [Build Commands](https://github.com/MaxHill/vue-starter/tree/master/docs/commands.md)
+- [Linter Configuration](https://github.com/MaxHill/vue-starter/tree/master/docs/linter.md)
+- [Pre-processor](https://github.com/MaxHill/vue-starter/tree/master/docs/pre-processor.md)
+- [Handle Static Assets](https://github.com/MaxHill/vue-starter/tree/master/docs/static.md)
+- [Environment Variables](https://github.com/MaxHill/vue-starter/tree/master/docs/env.md)
+- [Integrate with Backend Framework](https://github.com/MaxHill/vue-starter/tree/master/docs/backend.md)
+- [API Proxying During Development](https://github.com/MaxHill/vue-starter/tree/master/docs/proxy.md)
+- [Unit](https://github.com/MaxHill/vue-starter/tree/master/docs/unit.md)
+- [E2e](https://github.com/MaxHill/vue-starter/tree/master/docs/e2e.md)
+- [Prerender](https://github.com/MaxHill/vue-starter/tree/master/docs/prerender.md)
+
+
 # Pre-Processors
 
 This boilerplate has pre-configured CSS extraction for most popular CSS pre-processors including LESS, SASS, Stylus, and PostCSS. To use a pre-processor, all you need to do is installing the appropriate webpack loader for it. For example, to use SASS:
@@ -6,7 +23,7 @@ This boilerplate has pre-configured CSS extraction for most popular CSS pre-proc
 npm install sass-loader node-sass --save-dev
 ```
 
-Note you also need to install `node-sass` because `sass-loader` depends on it as a peer dependency.
+Sass is already handled for you out of the box.
 
 ### Using Pre-Processors inside Components
 

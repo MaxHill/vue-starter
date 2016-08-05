@@ -1,0 +1,25 @@
+.Welcome {
+    text-align: center;
+    padding: 7rem 0;
+}
+
+.Welcome__title {
+    font-size: 4rem;
+    font-weight: 100;
+}
+
+.Welcome__links {
+    margin-top:4rem;
+}
+
+.Welcome__link {
+    font-weight: 400;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #252525;
+    margin: 0 1rem;
+}
+
+.Welcome__link:hover {
+    text-decoration: underline;
+}

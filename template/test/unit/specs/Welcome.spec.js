@@ -1,15 +1,24 @@
-import Vue from 'vue';
 import Welcome from 'src/components/Welcome';
+import Help from '../helpers';
 
 describe('Welcome component', () => {
-    it('should render correct contents', () => {
-        const vm = new Vue({
-            template: '<div><welcome></welcome></div>',
-            components: {Welcome}
-        }).$mount();
+    let component;
+    let vm;
 
+    beforeEach(() => {
+        vm = Help.bootstrapComponent(Welcome);
+        component = vm.$refs.testComponent;
+    });
+
+    it('should render correct contents', () => {
         expect(vm.$el.querySelector('.Hero__title').textContent)
-        .to
-        .contain('Welcome to vue-starter');
+            .to
+            .contain('Build something awesome!');
+    });
+
+    it('should have an attribute for the title message', () => {
+        expect(component.msg)
+            .to
+            .equal('Build something awesome!');
     });
 });

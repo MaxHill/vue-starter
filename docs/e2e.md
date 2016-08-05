@@ -1,3 +1,20 @@
+# Summary
+Follow the links to read about the different topics.
+
+- [Home](https://github.com/MaxHill/vue-starter/tree/master/docs)
+- [Structure](https://github.com/MaxHill/vue-starter/tree/master/docs/structure.md)
+- [Build Commands](https://github.com/MaxHill/vue-starter/tree/master/docs/commands.md)
+- [Linter Configuration](https://github.com/MaxHill/vue-starter/tree/master/docs/linter.md)
+- [Pre-processor](https://github.com/MaxHill/vue-starter/tree/master/docs/pre-processor.md)
+- [Handle Static Assets](https://github.com/MaxHill/vue-starter/tree/master/docs/static.md)
+- [Environment Variables](https://github.com/MaxHill/vue-starter/tree/master/docs/env.md)
+- [Integrate with Backend Framework](https://github.com/MaxHill/vue-starter/tree/master/docs/backend.md)
+- [API Proxying During Development](https://github.com/MaxHill/vue-starter/tree/master/docs/proxy.md)
+- [Unit](https://github.com/MaxHill/vue-starter/tree/master/docs/unit.md)
+- [E2e](https://github.com/MaxHill/vue-starter/tree/master/docs/e2e.md)
+- [Prerender](https://github.com/MaxHill/vue-starter/tree/master/docs/prerender.md)
+
+
 # End-to-end Testing
 
 This boilerplate uses [Nightwatch.js](http://nightwatchjs.org) for e2e tests. Nightwatch.js is a highly integrated e2e test runner built on top of Selenium. This boilerplate comes with Selenium server and chromedriver binaries pre-configured for you, so you don't have to mess with these yourself.
