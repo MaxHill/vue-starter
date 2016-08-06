@@ -11,7 +11,7 @@ describe('Welcome component', () => {
     });
 
     it('should render correct contents', () => {
-        expect(vm.$el.querySelector('.Hero__title').textContent)
+        expect(vm.$el.querySelector('.Welcome__title').textContent)
             .to
             .contain('Build something awesome!');
     });
