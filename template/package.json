@@ -7,6 +7,8 @@
   "scripts": {
     "dev": "parallelshell 'npm run webpack' 'npm run watch:icons'",
     "webpack": "node build/dev-server.js && echo 'Done!' ",
+    "icons": "svg-sprite-generate -d src/assets/icons -o src/assets/icons.svg",
+    "watch:icons": "onchange 'src/assets/icons/*.svg' -- npm run icons",
     "build": "node build/build.js",
     {{#unit}}
     "unit": "node test/unit/runner.js",
@@ -16,8 +18,6 @@
     {{/e2e}}
     "test": "{{#unit}}npm run unit{{/unit}}{{#unit}}{{#e2e}} && {{/e2e}}{{/unit}}{{#e2e}}npm run e2e{{/e2e}}"{{#lint}},
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"{{/lint}},
-    "icons": "svg-sprite-generate -d src/assets/icons -o src/assets/icons.svg",
-    "watch:icons": "onchange 'src/assets/icons/*.svg' -- npm run icons",
     "generate:view": "node  build/generate/view.js",
     "generate:component": "node  build/generate/component.js",
     "generate:test": "node  build/generate/test.js"

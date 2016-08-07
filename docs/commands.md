@@ -5,7 +5,7 @@ Follow the links to read about the different topics.
 - [Structure](https://github.com/MaxHill/vue-starter/tree/master/docs/structure.md)
 - [Build Commands](https://github.com/MaxHill/vue-starter/tree/master/docs/commands.md)
 - [Linter Configuration](https://github.com/MaxHill/vue-starter/tree/master/docs/linter.md)
-- [Pre-processor](https://github.com/MaxHill/vue-starter/tree/master/docs/pre-processor.md)
+- [Pre-processors](https://github.com/MaxHill/vue-starter/blob/master/docs/pre-processors.md)
 - [Handle Static Assets](https://github.com/MaxHill/vue-starter/tree/master/docs/static.md)
 - [Environment Variables](https://github.com/MaxHill/vue-starter/tree/master/docs/env.md)
 - [Integrate with Backend Framework](https://github.com/MaxHill/vue-starter/tree/master/docs/backend.md)
@@ -21,6 +21,10 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 
 ### `npm run dev`
 
+> Runs `npm run webpack`& `npm run icons:watch` in paralell. See [Webpack command](#npm-run-webpack) & [Icons command](#npm-run-icons) for more details.
+
+### `npm run webpack`
+
 > Starts a Node.js local development server. See [API Proxying During Development](https://github.com/MaxHill/vue-starter/tree/master/docs/proxy.md) for more details.
 
 - Webpack + `vue-loader` for single file Vue components.
@@ -28,6 +32,14 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - State preserving compilation error overlay
 - Lint-on-save with ESLint
 - Source maps
+
+### `npm run icons`
+
+> Minifies and sprites svg files in `src/assets/images/icons`. You may use the commnd `npm run icons:watch` to watch the directory for changes and re run the script on change.
+
+- Combines svg files in `src/assets/images/icons`
+- Minifes combined svg
+- Outputs `src/assets/images/icons.svg`
 
 ### `npm run build`
 
@@ -55,3 +67,25 @@ All build commands are executed via [NPM Scripts](https://docs.npmjs.com/misc/sc
 - Works with one command out of the box:
   - Selenium and chromedriver dependencies automatically handled.
   - Automatically spawns the Selenium server.
+
+### `npm run generate:view`
+
+> Generate a new view boilerplate file. You will still need to register the view in the `src/routes.js`.
+
+- File boilerplate added by default.
+- File not created if already exists.
+
+### `npm run generate:component`
+
+> Generate a new component boilerplate file. You can see example of how to use a component in a view if you look in `src/views/Home.vue`
+
+- File boilerplate added by default.
+- File not created if already exists.
+
+
+### `npm run generate:test`
+
+> Generate a new test file hooked up with the test helper and component you want to test.
+
+- Test boilerplate added by default.
+- Test not created if already exists.

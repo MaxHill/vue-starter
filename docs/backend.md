@@ -5,7 +5,7 @@ Follow the links to read about the different topics.
 - [Structure](https://github.com/MaxHill/vue-starter/tree/master/docs/structure.md)
 - [Build Commands](https://github.com/MaxHill/vue-starter/tree/master/docs/commands.md)
 - [Linter Configuration](https://github.com/MaxHill/vue-starter/tree/master/docs/linter.md)
-- [Pre-processor](https://github.com/MaxHill/vue-starter/tree/master/docs/pre-processor.md)
+- [Pre-processors](https://github.com/MaxHill/vue-starter/blob/master/docs/pre-processors.md)
 - [Handle Static Assets](https://github.com/MaxHill/vue-starter/tree/master/docs/static.md)
 - [Environment Variables](https://github.com/MaxHill/vue-starter/tree/master/docs/env.md)
 - [Integrate with Backend Framework](https://github.com/MaxHill/vue-starter/tree/master/docs/backend.md)

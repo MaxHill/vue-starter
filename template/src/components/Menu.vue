@@ -16,6 +16,7 @@
             <a
                 class="navbar-brand hidden-sm-up"
                 v-link="{ path: '/' }"
+                @click="close()"
             >
                 <svg width="30" height="30">
                     <use xlink:href='#logo'>
@@ -43,10 +44,12 @@
                 <a
                     class="nav-item nav-link"
                     v-link="{ path: '/' }"
+                    @click="close()"
                 >Home</a>
                 <a
                     class="nav-item nav-link"
                     v-link="{ path: '/hello' }"
+                    @click="close()"
                 >Hello?</a>
 
             </nav>
@@ -68,6 +71,9 @@ export default {
     methods: {
         toggle() {
             this.vissible = !this.vissible;
+        },
+        close() {
+            this.vissible = false;
         }
     }
 };
