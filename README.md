@@ -1,10 +1,10 @@
-# Vue-starter
+# ue-starter
 
 > A full-featured Webpack setup with hot-reload, lint-on-save, unit testing & css extraction.
 
 ## Documentation
 
-Common topics are discussed in the [docs](https://github.com/MaxHill/vue-starter/tree/master/docs/README.md). Make sure to read it!
+Common topics are discussed in the [docs](https://github.com/MaxHill/vue-starter/wiki). Make sure to read it!
 
 ## Usage
 
@@ -12,7 +12,7 @@ This is a project template for [vue-cli](https://github.com/vuejs/vue-cli). **It
 
 ``` bash
 $ npm install -g vue-cli
-$ vue init MaxHill/vue-starter my-project
+$ vue init webpack my-project
 $ cd my-project
 $ npm install
 $ npm run dev
