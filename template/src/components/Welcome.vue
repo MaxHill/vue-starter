@@ -27,7 +27,7 @@ export default {
                 },
                 {
                     name: 'Documentation',
-                    url: 'https://github.com/MaxHill/vue-starter/tree/master/docs'
+                    url: 'https://github.com/MaxHill/vue-starter/wiki'
                 },
                 {
                     name: 'Max',
