@@ -12,29 +12,29 @@
 </template>
 
 <script>
-export default {
-    data() {
-        return {
-            // note: changing this line won't causes changes
-            // with hot-reload because the reloaded component
-            // preserves its current state and we are modifying
-            // its initial state.
-            msg: 'Build something awesome!',
-            links: [
-                {
-                    name: 'Github',
-                    url: 'https://github.com/MaxHill/vue-starter'
-                },
-                {
-                    name: 'Documentation',
-                    url: 'https://github.com/MaxHill/vue-starter/wiki'
-                },
-                {
-                    name: 'Max',
-                    url: 'https://twitter.com/maxpeterhill'
-                }
-            ]
-        }{{#if_eq lintConfig "google"}};{{/if_eq}}
-    }
-}{{#if_eq lintConfig "google"}};{{/if_eq}}
+    export default {
+        data() {
+            return {
+                // note: changing this line won't causes changes
+                // with hot-reload because the reloaded component
+                // preserves its current state and we are modifying
+                // its initial state.
+                msg: 'Build something awesome!',
+                links: [
+                    {
+                        name: 'Github',
+                        url: 'https://github.com/MaxHill/vue-starter'
+                    },
+                    {
+                        name: 'Documentation',
+                        url: 'https://github.com/MaxHill/vue-starter/wiki'
+                    },
+                    {
+                        name: 'Max',
+                        url: 'https://twitter.com/maxpeterhill'
+                    }
+                ]
+            }{{#if_eq lintConfig "google"}};{{/if_eq}}
+        }
+    }{{#if_eq lintConfig "google"}};{{/if_eq}}
 </script>
