@@ -2,7 +2,11 @@ var fs = require('fs');
 var clc = require('cli-color');
 module.exports =  {
     create: function(file, content) {
-        this.exists(__dirname + '/../' + file, this.write, content);
+        this.exists(
+            __dirname + '/../' + file,
+            this.write,
+            content
+        );
     },
 
     exists: function(file, callback, content) {
@@ -10,7 +14,7 @@ module.exports =  {
             if (exists) {
                 console.log(
                     clc.red('File exists:') +
-                    file.replace(__dirname + '/../../' , '')
+                    file.replace(__dirname + '/../' , '')
                 );
                 return true;
             }
@@ -25,7 +29,7 @@ module.exports =  {
             }
             console.log(
                 clc.green('Created: ') +
-                file.replace(__dirname + '/../../' , '')
+                file.replace(__dirname + '/../' , '')
             );
         }.bind(this));
     }
