@@ -5,7 +5,7 @@
             <a
                 v-for="link in links"
                 class="Welcome__link"
-                href="\{{ link.url }}"
+                v-bind:href="link.url"
             >\{{ link.name }}</a>
         </nav>
     </div>

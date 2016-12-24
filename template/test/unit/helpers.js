@@ -10,7 +10,7 @@ module.exports = {
      */
     bootstrapComponent(component) {
         let vm = new Vue({
-            template: '<div><test v-ref:test-component></test></div>',
+            template: '<div><test ref:test-component></test></div>',
             components: {
                 test: component
             }

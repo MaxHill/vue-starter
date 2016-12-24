@@ -5,10 +5,14 @@ import routes from './routes'{{#if_eq lintConfig "google"}};{{/if_eq}}
 
 Vue.use(VueRouter){{#if_eq lintConfig "google"}};{{/if_eq}}
 
-const Router = new VueRouter({history: true}){{#if_eq lintConfig "google"}};{{/if_eq}}
+const router = new VueRouter({
+    mode: 'history',
+    routes
+}){{#if_eq lintConfig "google"}};{{/if_eq}}
 
-Router.map(routes){{#if_eq lintConfig "google"}};{{/if_eq}}
-
-Router.start({
-    components: {App}
-}, 'body'){{#if_eq lintConfig "google"}};{{/if_eq}}
+/* eslint-disable no-new */
+new Vue({
+    el: '#app',
+    render: h => h(App),
+    router
+}){{#if_eq lintConfig "google"}};{{/if_eq}}

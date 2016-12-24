@@ -13,15 +13,15 @@
                     <use xlink:href='#menu'>
                 </svg>
             </button>
-            <a
+            <router-link
                 class="navbar-brand hidden-sm-up"
-                v-link="{ path: '/' }"
+                to="/"
                 @click="close()"
             >
                 <svg width="30" height="30">
                     <use xlink:href='#logo'>
                 </svg>
-            </a>
+            </router-link>
 
         </div>
 
@@ -30,27 +30,27 @@
             class="collapse navbar-toggleable-xs container"
         >
 
-            <a
+            <router-link
                 class="navbar-brand hidden-xs-down"
-                v-link="{ path: '/' }"
+                to="/"
             >
                 <svg width="30" height="30">
                     <use xlink:href='#logo'>
                 </svg>
-            </a>
+            </router-link>
 
             <nav class="nav navbar-nav pull-sm-right">
 
-                <a
+                <router-link
                     class="nav-item nav-link"
-                    v-link="{ path: '/' }"
+                    to="/"
                     @click="close()"
-                >Home</a>
-                <a
+                >Home</router-link>
+                <router-link
                     class="nav-item nav-link"
-                    v-link="{ path: '/hello' }"
+                    to="/hello"
                     @click="close()"
-                >Hello?</a>
+                >Hello?</router-link>
 
             </nav>
         </div>
