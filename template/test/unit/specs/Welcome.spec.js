@@ -1,24 +1,22 @@
-import Welcome from 'src/components/Welcome';
-import Help from '../helpers';
+import Welcome from 'src/components/Welcome'{{#if_eq lintConfig "google"}};{{/if_eq}}
+import Help from '../helpers'{{#if_eq lintConfig "google"}};{{/if_eq}}
 
 describe('Welcome component', () => {
-    let component;
-    let vm;
+    let component{{#if_eq lintConfig "google"}};{{/if_eq}}
 
     beforeEach(() => {
-        vm = Help.bootstrapComponent(Welcome);
-        component = vm.$refs.testComponent;
-    });
+        component = Help.bootstrapComponent(Welcome){{#if_eq lintConfig "google"}};{{/if_eq}}
+    }){{#if_eq lintConfig "google"}};{{/if_eq}}
 
     it('should render correct contents', () => {
-        expect(vm.$el.querySelector('.Welcome__title').textContent)
+        expect(component.$el.querySelector('.Welcome__title').textContent)
             .to
-            .contain('Build something awesome!');
-    });
+            .contain('Build something awesome!'){{#if_eq lintConfig "google"}};{{/if_eq}}
+    }){{#if_eq lintConfig "google"}};{{/if_eq}}
 
     it('should have an attribute for the title message', () => {
         expect(component.msg)
             .to
-            .equal('Build something awesome!');
-    });
-});
+            .equal('Build something awesome!'){{#if_eq lintConfig "google"}};{{/if_eq}}
+    }){{#if_eq lintConfig "google"}};{{/if_eq}}
+}){{#if_eq lintConfig "google"}};{{/if_eq}}

@@ -1,80 +1,72 @@
 <template>
-    <div
-        class="navbar navbar-light navbar-static-top"
-        role="banner"
-    >
-        <div class="clearfix">
+    <nav class="navbar navbar-light navbar-fixed-top bg-faded">
+        <div class="clearfix hidden-md-up">
+            <router-link class="navbar-brand" to="/">
+                <svg width="30" height="30">
+                    <use xlink:href='#logo'>
+                </svg>
+            </router-link>
 
             <button
                 @click="toggle()"
-                class="navbar-toggler pull-xs-right hidden-sm-up"
+                class="float-xs-right btn align-middle btn-outline-secondary"
+                type="button"
             >
                 <svg width="20" height="20">
                     <use xlink:href='#menu'>
                 </svg>
             </button>
-            <router-link
-                class="navbar-brand hidden-sm-up"
-                to="/"
-                @click="close()"
-            >
-                <svg width="30" height="30">
-                    <use xlink:href='#logo'>
-                </svg>
-            </router-link>
-
         </div>
+
+        <router-link class="navbar-brand hidden-sm-down" to="/">
+            <svg width="30" height="30">
+                <use xlink:href='#logo'>
+            </svg>
+        </router-link>
 
         <div
             v-bind:class="{'in': vissible}"
-            class="collapse navbar-toggleable-xs container"
+            class="collapse navbar-toggleable-sm"
         >
+            <ul class="nav navbar-nav float-xs-none float-md-right">
+                <li class="nav-item">
+                    <router-link
+                        v-on:click.native="close()"
+                        class="nav-link"
+                        to="/"
+                    >Home</router-link>
+                </li>
 
-            <router-link
-                class="navbar-brand hidden-xs-down"
-                to="/"
-            >
-                <svg width="30" height="30">
-                    <use xlink:href='#logo'>
-                </svg>
-            </router-link>
-
-            <nav class="nav navbar-nav pull-sm-right">
-
-                <router-link
-                    class="nav-item nav-link"
-                    to="/"
-                    @click="close()"
-                >Home</router-link>
-                <router-link
-                    class="nav-item nav-link"
-                    to="/hello"
-                    @click="close()"
-                >Hello?</router-link>
-
-            </nav>
+                <li class="nav-item">
+                    <router-link
+                        v-on:click.native="close()"
+                        class="nav-link"
+                        to="/hello"
+                    >Hello</router-link>
+                </li>
+            </ul>
         </div>
-    </div>
+    </nav>
 </template>
 
 <script>
-/**
- * The Menu component.
- * @type {Object}
- */
-export default {
-    data() {
-        return {
-            vissible: false
-        };
-    },
-    methods: {
-        toggle() {
-            this.vissible = !this.vissible;
+    /**
+     * The Menu component.
+     * @type {Object}
+     */
+    export default {
+        data() {
+            return {
+                vissible: false
+            };
         },
-        close() {
-            this.vissible = false;
+        methods: {
+            toggle() {
+                this.vissible = !this.vissible;
+            },
+            close() {
+                this.vissible = false;
+            }
         }
-    }
-};
+    };
 </script>

@@ -9,13 +9,6 @@ module.exports = {
      * @return {object} Hooked up component
      */
     bootstrapComponent(component) {
-        let vm = new Vue({
-            template: '<div><test ref:test-component></test></div>',
-            components: {
-                test: component
-            }
-        }).$mount();
-
-        return vm;
+        return new Vue(component).$mount(){{#if_eq lintConfig "google"}};{{/if_eq}}
     }
 };
