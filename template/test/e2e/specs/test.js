@@ -7,7 +7,7 @@ module.exports = {
         .url('http://localhost:8000')
             .waitForElementVisible('#app', 5000)
             .assert.elementPresent('.navbar-brand')
-            .assert.containsText('h1', 'Welcome to vue-starter')
+            .assert.containsText('h1', 'Build something awesome!')
             .end();
     }
 };
