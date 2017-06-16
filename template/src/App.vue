@@ -17,8 +17,6 @@
         data() {
             return {icons: require('assets/images/icons.svg')}{{#if_eq lintConfig "google"}};{{/if_eq}}
         },
-        components: {appMenu}
+        components: {appMenu}{{#if_eq lintConfig "google"}},{{/if_eq}}
     }{{#if_eq lintConfig "google"}};{{/if_eq}}
 </script>
-
-

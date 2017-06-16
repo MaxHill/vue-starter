@@ -13,7 +13,7 @@
 
     export default {
         components: {
-            Welcome
-        }
+            Welcome{{#if_eq lintConfig "google"}},{{/if_eq}}
+        }{{#if_eq lintConfig "google"}},{{/if_eq}}
     };
 </script>

@@ -5,14 +5,14 @@ import Hello from './views/Hello'{{#if_eq lintConfig "google"}};{{/if_eq}}
 export default [
     {
         path: '/',
-        component: Home
+        component: Home{{#if_eq lintConfig "google"}},{{/if_eq}}
     },
     {
         path: '/hello',
-        component: Hello
+        component: Hello{{#if_eq lintConfig "google"}},{{/if_eq}}
     },
     {
         path: '*',
-        component: NotFound
-    }
+        component: NotFound{{#if_eq lintConfig "google"}},{{/if_eq}}
+    }{{#if_eq lintConfig "google"}},{{/if_eq}}
 ]{{#if_eq lintConfig "google"}};{{/if_eq}}

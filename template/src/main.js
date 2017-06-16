@@ -7,12 +7,12 @@ Vue.use(VueRouter){{#if_eq lintConfig "google"}};{{/if_eq}}
 
 const router = new VueRouter({
     mode: 'history',
-    routes
+    routes{{#if_eq lintConfig "google"}},{{/if_eq}}
 }){{#if_eq lintConfig "google"}};{{/if_eq}}
 
 /* eslint-disable no-new */
 new Vue({
     el: '#app',
-    render: h => h(App),
-    router
+    render: (h) => h(App),
+    router{{#if_eq lintConfig "google"}},{{/if_eq}}
 }){{#if_eq lintConfig "google"}};{{/if_eq}}

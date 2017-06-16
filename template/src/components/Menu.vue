@@ -3,7 +3,7 @@
         <div class="clearfix hidden-md-up">
             <router-link class="navbar-brand" to="/">
                 <svg width="30" height="30">
-                    <use xlink:href='#logo'>
+                    <use xlink:href='#logo'/>
                 </svg>
             </router-link>
 
@@ -13,14 +13,14 @@
                 type="button"
             >
                 <svg width="20" height="20">
-                    <use xlink:href='#menu'>
+                    <use xlink:href='#menu'/>
                 </svg>
             </button>
         </div>
 
         <router-link class="navbar-brand hidden-sm-down" to="/">
             <svg width="30" height="30">
-                <use xlink:href='#logo'>
+                <use xlink:href='#logo'/>
             </svg>
         </router-link>
 
@@ -57,7 +57,7 @@
     export default {
         data() {
             return {
-                vissible: false
+                vissible: false{{#if_eq lintConfig "google"}},{{/if_eq}}
             };
         },
         methods: {
@@ -66,7 +66,7 @@
             },
             close() {
                 this.vissible = false;
-            }
-        }
+            }{{#if_eq lintConfig "google"}},{{/if_eq}}
+        }{{#if_eq lintConfig "google"}},{{/if_eq}}
     };
 </script>

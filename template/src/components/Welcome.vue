@@ -23,18 +23,18 @@
                 links: [
                     {
                         name: 'Github',
-                        url: 'https://github.com/MaxHill/vue-starter'
+                        url: 'https://github.com/MaxHill/vue-starter'{{#if_eq lintConfig "google"}},{{/if_eq}}
                     },
                     {
                         name: 'Documentation',
-                        url: 'https://github.com/MaxHill/vue-starter/wiki'
+                        url: 'https://github.com/MaxHill/vue-starter/wiki'{{#if_eq lintConfig "google"}},{{/if_eq}}
                     },
                     {
                         name: 'Max',
-                        url: 'https://twitter.com/maxpeterhill'
-                    }
-                ]
+                        url: 'https://twitter.com/maxpeterhill'{{#if_eq lintConfig "google"}},{{/if_eq}}
+                    }{{#if_eq lintConfig "google"}},{{/if_eq}}
+                ]{{#if_eq lintConfig "google"}},{{/if_eq}}
             }{{#if_eq lintConfig "google"}};{{/if_eq}}
-        }
+        }{{#if_eq lintConfig "google"}},{{/if_eq}}
     }{{#if_eq lintConfig "google"}};{{/if_eq}}
 </script>
